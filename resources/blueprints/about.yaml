@@ -1,0 +1,23 @@
+title: About
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      width: 66
+  -
+    handle: slug
+    field:
+      type: text
+      width: 33
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Content
+  -
+    handle: fun_facts
+    field:
+      type: list
+      display: 'Fun Facts'
+taxonomies: false

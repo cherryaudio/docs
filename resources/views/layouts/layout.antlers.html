@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7 antialiased"><![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8 antialiased" <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9 antialiased" <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js antialiased">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ theme:img src="favicons/apple-touch-icon.png" }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ theme:img src="favicons/favicon-32x32.png" }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ theme:img src="favicons/favicon-16x16.png" }}">
+    <link rel="manifest" href="{{ theme:img src="favicons/site.webmanifest" }}">
+    <link rel="mask-icon" href="{{ theme:img src="favicons/safari-pinned-tab.svg" color="#ef022c" }}">
+    <link rel="shortcut icon" href="{{ theme:img src="favicons/favicon.ico" }}">
+    <meta name="msapplication-TileColor" content="#333333">
+    <meta name="msapplication-config" content="{{ theme:img src="favicons/browserconfig.xml" }}">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112177204-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112177204-1');
+    </script>
+</head>
+
+<body>
+
+    {{ partial:nav }}
+
+    {{ template_content }}
+
+    {{ partial:footer }}
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<form action="https://sendy.acoustica.com/subscribe" method="POST" accept-charset="utf-8" class="md:w-1/2 mx-auto mb-16">
+    <div class="md:flex md:mb-4 mb-0 md:-mx-4">
+        <div class="md:w-1/2 md:mb-0 mb-4 md:px-4">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" id="name" class="form-control"/>
+        </div>
+        <div class="md:w-1/2 md:mb-0 mb-4 md:px-4">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" class="form-control"/>
+        </div>
+    </div>
+    <label for="gdpr" class="mb-4 block">
+        <p class="leading-normal text-sm text-gray-500 mb-2"><input type="checkbox" name="gdpr" id="gdpr" class="mr-2"/> <strong>Marketing permission</strong>: I give my consent to  to be in touch with me via email using the information I have provided in this form for the purpose of news, updates and marketing.</p>
+        <p class="leading-normal text-sm text-gray-500"><strong>What to expect</strong>: If you wish to withdraw your consent and stop hearing from us, simply click the unsubscribe link at the bottom of every email we send or contact us at <a href="mailto:news@acoustica.com" class="underline">news@acoustica.com</a>. We value and respect your personal data and privacy. To view our privacy policy, please visit our website. By submitting this form, you agree that we may process your information in accordance with these terms.</p>
+    </label>
+    <div class="hidden">
+        <label for="hp">HP</label>
+        <input type="text" name="hp" id="hp"/>
+	</div>
+	<input type="hidden" name="list" value="{{ list_id }}"/>
+    <input type="hidden" name="subform" value="yes"/>
+    
+	<button type="submit" class="btn btn-primary">Sign Up</button>
+</form>

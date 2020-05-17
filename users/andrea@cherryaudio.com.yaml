@@ -1,0 +1,6 @@
+roles:
+  - admin
+id: 8e971c27-4141-4dd8-b8ef-f0a8bfc35d61
+super: true
+password_hash: $2y$10$pawlT6nkwz.j2Ja.w/X52usXiO48S.Rs0bs/xzjmhQE8zlnf10iQ6
+name: 'Andy Swick'

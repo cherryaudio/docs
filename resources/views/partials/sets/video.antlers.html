@@ -1,0 +1,12 @@
+<div class="w-full md:{{ width }} mx-auto my-12">
+    <div class="embed-responsive embed-responsive-16by9">
+        {{ if video | is_embeddable }}
+        <!-- Youtube and Video -->
+        <iframe class="embed-responsive-item" src="{{ video | embed_url }}" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        {{ else }}
+        <!-- Other HTML5 video types -->
+        <video class="embed-responsive-item" src="{{ video | embed_url }}"></video>
+        {{ /if }}
+    </div>
+</div>

@@ -1,0 +1,20 @@
+title: 'Random Task'
+body:
+  -
+    type: text
+    text: '<h1>RANDOM TASK</h1>'
+  -
+    type: image
+    image:
+      - /assets/modules/ug_random-task.jpg
+    alignment: left
+  -
+    type: text
+    text: '<p>The Cherry Audio Random Task module is a “Turing machine” CV module for generating semi-random voltages with CV control of probability, step shuffling, and pattern length.&nbsp;</p><p>This module generates random voltages that are stored at 16 individual steps. Once the steps are initially filled with random voltages, the <em>Probability</em> knob controls the chance that the current step will be overwritten with a new random voltage while the <em>Shuffle</em> knob controls the chance that all of the stored voltages will be “shuffled” like a deck of cards.<br></p><h2><strong>Inputs, Outputs and Controls</strong></h2><p><strong>Clock In jack</strong>- A 5V pulse or gate received at this jack will advance the module to the next step.</p><p><strong>Direction</strong>- These three buttons change the order in which the steps are cycled through. Options are <em>Backward</em>, <em>Back</em> and<em> Forth</em>, and <em>Forward</em>.<br></p><p><strong>Probability</strong>- This sets the probability that the voltages stored at the current step will be overwritten by a new random voltage. At 0% there is no chance that the stored voltage will be changed. At 50%, there is a 50/50 chance that each step will output its stored voltage or be changed to a new random voltage. At 100%, every step will be overwritten with a new random voltage.<br></p><p><strong>Prob CV In jack</strong>- CV input for externally controlling the&nbsp;<em>Probability</em> setting.</p><p><strong>Shuffle</strong>- Adjusts the chance that the stored voltages will be “shuffled” like a deck of cards. All of the voltages stay the same but the step number that they are stored at are randomly changed. At 0% there is no chance that the steps will be shuffled. At 50%, there is a 50/50 chance at each step of the pattern that all of the values will be shuffled. At 100%, the voltages are shuffled every step creating a random pattern of the same stored voltages.<br></p><p><strong>Shuffle CV In jack</strong>- CV input for externally controlling the&nbsp;<em>Shuffle</em> setting<em>.</em></p><p><strong>Steps</strong>- Sets the number of steps that are being cycled through as well as potentially changed due to the <em>Probability</em> and <em>Shuffle</em> settings. With the <em>Probability</em> and <em>Shuffle</em> knobs both set to 0%, the number of steps&nbsp;can be adjusted and all of the voltages will remain unchanged. If <em>Steps</em> is set to three, and the <em>Probability</em> and/or <em>Shuffle</em> knobs are above 0%, there is a chance that the first three steps may be randomly changed or shuffled, but steps four through sixteen will remain unchanged. Therefore, if the <em>Probability</em> and <em>Shuffle </em>knobs<em> </em>are set back to 0% and the number of steps is increased again, the voltages previously stored at steps four through sixteen will be the same as they were before.&nbsp;<br></p><p><strong>Steps CV In jack</strong>- CV input for externally controlling the number of steps in the pattern.</p><p><strong>CV Offset</strong>- Offsets the output voltage by adding or subtracting up to 2V.<br></p><p><strong>CV Range</strong>- Attenuates the output signal so that its voltage can be limited to a specific range.<br></p><p><strong>CV Out jack</strong>- Outputs a control voltage each time the module advances to a new step.<br></p>'
+template: documentation
+seo:
+  description: 'The Cherry Audio Random Task module is a “Turing machine” CV module for generating semi-random voltages with CV control of probability, step shuffling, and pattern length.'
+  image: /assets/social-modules/random-task.png
+id: b2c8fb70-5e72-4333-aaba-2baac171bab4
+slug: random-task
+blueprint: documentation
