@@ -1,0 +1,7 @@
+routes:
+  /:
+    uses: DashboardController@index
+    as: docsToPdf.dashboard
+  post@dashboard:
+    uses: DashboardController@store
+    as: docsToPdf.dashboard.store

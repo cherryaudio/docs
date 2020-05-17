@@ -1,0 +1,130 @@
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        display: Title
+        type: text
+        localizable: true
+      body:
+        buttons:
+          - h1
+          - h2
+          - h3
+          - h4
+          - h5
+          - h6
+          - bold
+          - italic
+          - underline
+          - strikethrough
+          - unorderedlist
+          - orderedlist
+          - removeformat
+          - quote
+          - superscript
+          - subscript
+          - anchor
+          - assets
+          - code
+        style: sans
+        spellcheck: true
+        allow_source: true
+        allow_internal_links: true
+        link_noopener: false
+        link_noreferrer: false
+        target_blank: false
+        semantic_elements: true
+        restrict_assets: false
+        type: bard
+        display: Content
+        sets:
+          quote:
+            fields:
+              text:
+                type: text
+              cite:
+                type: text
+            display: Quote
+          image:
+            fields:
+              image:
+                type: assets
+                container: main
+                folder: /
+                restrict: false
+              alignment:
+                type: select
+                default: left
+                options:
+                  left: Left
+                  center: Center
+                  right: Right
+            display: Image
+          buttons:
+            display: 'Inline Links/Buttons'
+            fields:
+              alignment:
+                options:
+                  text-center: Center
+                  '': Left
+                  text-right: Right
+                type: select
+                display: Alignment
+                default: text-center
+              buttons:
+                sets:
+                  button:
+                    display: Button
+                    fields:
+                      link_text:
+                        type: text
+                        width: 33
+                        display: 'Link Text'
+                      url:
+                        type: text
+                        width: 33
+                        display: Url
+                      target_blank:
+                        type: toggle
+                        width: 33
+                        display: 'Open In New Tab'
+                      color:
+                        options:
+                          btn-white: White
+                          btn-yellow: Yellow
+                          btn-black: Black
+                          btn-grey: Grey
+                        type: select
+                        width: 50
+                        display: Color
+                      size:
+                        options:
+                          '': Regular
+                          btn-sm: Small
+                          btn-large: Large
+                        type: select
+                        width: 50
+                        display: Size
+                type: replicator
+                display: Buttons
+          video:
+            display: Video
+            fields:
+              video:
+                type: video
+                display: Video
+          table:
+            display: Table
+            fields:
+              table:
+                type: table
+                display: Table
+        folder: /
+        container: main
+      template:
+        type: hidden
+        display: template
+        default: documentation
+taxonomies: true
+title: Documentation

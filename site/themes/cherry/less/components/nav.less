@@ -1,0 +1,42 @@
+.nav-link {
+@apply text-white text-lg uppercase py-2 px-4 no-underline border-transparent;
+
+  &:hover {
+  @apply border-yellow;
+  }
+
+  &.active {
+  @apply border-yellow text-yellow;
+  }
+}
+
+.nav-btn {
+@apply text-lg uppercase m-2 py-2 px-4 no-underline border border-yellow;
+
+  &:hover {
+  @apply bg-yellow text-black;
+  }
+}
+
+.vertical-nav {
+  .nav-link {
+  @apply text-grey-darker py-2 px-0 no-underline border-grey-dark normal-case;
+
+    &:hover {
+    @apply text-grey-darkest underline;
+    }
+
+    &.active {
+    @apply text-grey-darkest underline;
+    }
+  }
+}
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}

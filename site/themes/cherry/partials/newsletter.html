@@ -1,0 +1,25 @@
+{{ sendy }}
+<form action="{{ url }}" method="post" class="sm:flex py-2">
+    {{ csrf_field }}
+    <label class="sr-only" for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" aria-label="Email"
+           class="block w-full sm:flex-grow sm:mb-0 mb-3 p-4 border-2 border-yellow bg-transparent text-white"
+           value="{{ old.email }}">
+    <button type="submit" name="subscribe" class="w-full sm:w-48 bg-yellow font-bold border-yellow hover:bg-yellow-dark text-sm border-2 text-black py-2 px-4 uppercase">
+        Sign Up
+    </button>
+    {{ if errors }}
+    <div class="block w-full text-red mt-2">
+        {{ errors }}
+        {{ value }}<br>
+        {{ /errors }}
+    </div>
+    {{ /if }}
+
+    {{ if success }}
+    <div class="block w-full text-yellow mt-2">
+        Subscribed to the Cherry Audio newsletter!
+    </div>
+    {{ /if }}
+</form>
+{{ /sendy }}

@@ -1,0 +1,85 @@
+.markdown {
+  .subnav, .subnav& {
+  @apply flex mt-6 mb-6 pb-2 border-b-2 border-grey-light;
+
+    .subnav-link, .subnav-link& {
+    @apply mr-6 leading-none text-grey-light text-sm;
+    }
+  }
+
+  hr {
+  @apply my-12 border-t-0 border-r-0 border-l-0 border-b border-grey-light;
+  }
+
+  a, p a, a& {
+  @apply text-grey-light underline;
+
+    &:hover {
+    @apply text-white;
+    }
+  }
+
+  p code, p& code&,
+  li code, li& code&,
+  td code, td& code& {
+  @apply inline-block bg-grey-lightest rounded-sm text-sm p-1 leading-none whitespace-no-wrap text-red font-mono align-baseline;
+    font-weight: 400;
+  }
+
+  pre, pre& {
+  @apply font-mono border-2 border-grey-light rounded;
+    font-weight: 400;
+  }
+
+  blockquote, blockquote& {
+  @apply italic text-grey-darker .text-sm;
+  }
+
+  h1, h1& {
+  @apply mb-1 leading-none text-white font-semibold text-4xl;
+  }
+
+  h2, h2& {
+  @apply mt-12 mb-4 text-grey-lightest leading-none font-semibold text-2xl;
+  }
+
+  h3, h3& {
+  @apply mt-12 mb-4 text-grey-lightest leading-none font-semibold text-xl;
+  }
+
+  h4, h4& {
+  @apply mt-8 mb-0 text-grey-lightest leading-none font-semibold text-base;
+  }
+
+  h1 + p {
+  @apply mt-8;
+  }
+
+  h1 code,
+  h2 code,
+  h3 code,
+  h4 code {
+  @apply font-mono;
+  }
+
+  p, p&, blockquote p, li {
+  @apply text-grey-light my-4 leading-normal;
+  }
+
+  ul, ol {
+  @apply text-grey-darker;
+    margin: 0 0 2em;
+  }
+
+  li {
+  @apply my-2 text-grey-light;
+
+    p {
+    @apply my-0;
+    }
+  }
+
+  :not(pre):not(h1):not(h2):not(h3):not(h4) code, pre, pre& {
+  @apply bg-grey-lightest text-sm leading-normal;
+  }
+}

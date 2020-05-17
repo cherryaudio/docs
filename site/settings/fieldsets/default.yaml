@@ -1,0 +1,17 @@
+sections:
+  main:
+    display: Main
+    fields:
+      title:
+        display: Title
+        type: text
+      content:
+        cheatsheet: false
+        restrict_assets: false
+        type: markdown
+        display: Content
+      template:
+        type: template
+        display: Template
+taxonomies: true
+title: Default

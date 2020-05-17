@@ -1,0 +1,172 @@
+//
+// Basic Bootstrap table
+//
+
+.table {
+  @apply w-full mb-4 text-grey-light;
+
+  th,
+  td {
+    @apply p-3 align-top border border-grey-dark;
+  }
+
+  thead th {
+    @apply align-bottom border-grey-light;
+  }
+
+  tbody + tbody {
+    @apply border-t border-grey-dark;
+  }
+}
+
+
+//
+// Condensed table w/ half padding
+//
+
+.table-sm {
+  th,
+  td {
+    @apply p-1;
+  }
+}
+
+
+// Border versions
+//
+// Add or remove borders all around the table and between all the columns.
+
+.table-bordered {
+  @apply border border-grey-light;
+
+  th,
+  td {
+    @apply border border-grey-light;
+  }
+
+  thead {
+    th,
+    td {
+      @apply border-b-2;
+    }
+  }
+}
+
+.table-borderless {
+  th,
+  td,
+  thead th,
+  tbody + tbody {
+    @apply border-none;
+  }
+}
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+    @apply bg-grey-darkest;
+  }
+}
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  tbody tr {
+  &:hover {
+    @apply text-grey-darker bg-grey-light;
+  }
+  }
+}
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+//@each $color, $value in $theme-colors {
+//@include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
+//}
+//
+//@include table-row-variant(active, $table-active-bg);
+
+
+// Dark styles
+//
+// Same table markup, but inverted color scheme: dark background and light text.
+
+// stylelint-disable-next-line no-duplicate-selectors
+.table {
+  .thead-dark {
+    th {
+      @apply text-white bg-grey-darker border-grey-darker;
+    }
+  }
+
+  .thead-light {
+    th {
+      @apply text-grey-dark bg-grey-lighter border-grey-lighter;
+    }
+  }
+}
+
+.table-dark {
+  @apply text-white bg-grey-darker;
+
+  th,
+  td,
+  thead th {
+    @apply border-grey-dark;
+  }
+
+  &.table-bordered {
+    @apply border-none;
+  }
+
+  &.table-striped {
+    tbody tr:nth-of-type(odd) {
+      @apply bg-grey;
+    }
+  }
+
+  &.table-hover {
+    tbody tr {
+      &:hover {
+        @apply text-white bg-grey-light;
+      }
+    }
+  }
+}
+
+
+// Responsive tables
+//
+// Generate series of `.table-responsive-*` classes for configuring the screen
+// size of where your table will overflow.
+
+//.table-responsive {
+//@each $breakpoint in map-keys($grid-breakpoints) {
+//  $next: breakpoint-next($breakpoint, $grid-breakpoints);
+//  $infix: breakpoint-infix($next, $grid-breakpoints);
+//
+//  &#{$infix} {
+//  @include media-breakpoint-down($breakpoint) {
+//    display: block;
+//    width: 100%;
+//    overflow-x: auto;
+//    -webkit-overflow-scrolling: touch;
+//
+//    // Prevent double border on horizontal scroll due to use of `display: block;`
+//    > .table-bordered {
+//      @apply border-none;
+//    }
+//  }
+//  }
+//}
+//}

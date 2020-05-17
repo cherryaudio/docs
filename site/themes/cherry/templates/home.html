@@ -1,0 +1,90 @@
+{{ partial:carousel }}
+
+<div class="md:flex">
+    <div class="w-full md:w-1/3 bg-yellow border border-yellow-dark p-8 text-center">
+        <div class="h-16 mb-8">
+            <a href="/voltage-modular">
+                {{ asset:voltage_icon }}
+                <img src="{{ url }}" alt="{{ alt }}" class="mx-auto max-w-full max-h-full"/>
+                {{ /asset:voltage_icon }}
+            </a>
+        </div>
+        <div class="markdown">
+            {{ voltage_text | markdown }}
+        </div>
+    </div>
+    <div class="w-full md:w-1/3 bg-yellow border border-yellow-dark p-8 text-center">
+        <div class="h-16 mb-8">
+            <a href="/voltage-module-designer">
+                {{ asset:module_designer_icon }}
+                <img src="{{ url }}" alt="{{ alt }}" class="mx-auto max-w-full max-h-full"/>
+                {{ /asset:module_designer_icon }}
+            </a>
+        </div>
+        <div class="markdown">
+            {{ module_designer_text | markdown }}
+        </div>
+    </div>
+    <div class="w-full md:w-1/3 bg-yellow border border-yellow-dark p-8 text-center">
+        <div class="h-16 mb-8">
+            <a href="https://store.cherryaudio.com" target="_blank">
+                {{ asset:store_icon }}
+                <img src="{{ url }}" alt="{{ alt }}" class="mx-auto max-w-full max-h-full"/>
+                {{ /asset:store_icon }}
+            </a>
+        </div>
+        <div class="markdown">
+            {{ store_text | markdown }}
+        </div>
+    </div>
+</div>
+
+{{ partial:quotes }}
+
+<div class="bg-black p-16">
+    <div class="container">
+        <div class="md:flex -mx-8">
+            <div class="md:w-1/2 px-8 h-full">
+                <div class="embed-responsive embed-responsive-16by9">
+                    {{ if video | is_embeddable }}
+                    <iframe class="embed-responsive-item" src="{{ video | embed_url }}" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    {{ else }}
+                    <video class="embed-responsive-item" src="{{ video | embed_url }}"></video>
+                    {{ /if }}
+                </div>
+            </div>
+            <div class="md:w-1/2 px-8 h-full">
+                <div class="markdown markdown-dark mb-8">
+                    {{ voltage_section_text | markdown }}
+                </div>
+
+                <a href="/voltage-modular" class="btn-yellow btn-block">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-grey p-16">
+    <div class="container">
+        <div class="md:flex -mx-8">
+            <div class="md:w-1/2 mb-8 md:mb-0 px-8 h-full flex items-center">
+                <div>
+                    <div class="markdown mb-8">
+                        {{ designer_section_text | markdown }}
+                    </div>
+
+                    <a href="/voltage-module-designer" class="btn-black btn-block">Learn More</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 px-8 h-full">
+                {{ assets:image }}
+                <img src="{{ url }}" alt="{{ alt }}"/>
+                {{ /assets:image }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ partial:news }}

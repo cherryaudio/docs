@@ -1,0 +1,70 @@
+title: 'Perform Controls Panel'
+body:
+  -
+    type: text
+    text: '<h1>PERFORM CONTROLS PANEL</h1><p>The <em>Perform</em>&nbsp;controls panel contains nine knobs and four buttons that are freely assignable to control almost any controls within a module. What makes them special is that each one can be matrixed to simultaneously control an unlimited number of module parameters. In conjunction with the&nbsp;<em>MIDI</em>&nbsp;tab’s individual&nbsp;<em>Min</em>&nbsp;and <em>Max</em>&nbsp;controls, a single knob or button can be configured to dramatically alter a patch, with great accuracy. If you’re wondering why we choose nine knobs (as opposed to an even number), this was done to match the sliders on many hardware MIDI controllers (which, in turn, often feature nine sliders to mirror the nine drawbars of a Hammond-style tonewheel organ).</p><p>Besides being really powerful, the <em>Perform</em>&nbsp;controls panel is super simple to set up and use, so let’s delve in:</p>'
+  -
+    type: image
+    image:
+      - /assets/screenshots/ug_performbutton.jpg
+    alignment: left
+  -
+    type: text
+    text: '<h3>Hide/Show Perform Controls Panel</h3><p>Not its most exciting feature, but the <em>Perform</em>&nbsp;controls panel can hidden from view or displayed by clicking the big yellow <em>Perform</em>&nbsp;button at the top of the Voltage Modular window. We included this option in case you need more room for modules and aren’t currently making use of the fabulous <em>Perform</em>&nbsp;controls panel.</p><h3>Assigning Control Knobs To The Perform Controls Panel</h3>'
+  -
+    type: image
+    image:
+      - /assets/screenshots/ug_ppassign.jpg
+    alignment: left
+  -
+    type: text
+    text: '<p>To assign a module control to a <em>Perform</em>&nbsp;controls panel knob, right-click on the module control, select <em>Perform Assign</em>, and choose a <em>Perform Knob</em>. Once the control is assigned, the parameter will appear beneath the appropriate knob.</p>'
+  -
+    type: image
+    image:
+      - /assets/screenshots/ug_ppname.jpg
+    alignment: left
+  -
+    type: text
+    text: '<p>The perform knob or button can be renamed by double-clicking the name, typing a new name, and hitting ENTER or clicking the mouse- this is especially if the knob is configured to control more than one parameter concurrently.</p><p>To control more than one module parameter with a single <em>Perform</em>&nbsp;control, right-click on additional module controls and simply assign the same perform panel knob or button. The parameter shown next to the knob will update to show the most recent assignment, but all the module controls it’s assigned to can be easily seen in the <em>MIDI</em>&nbsp;library tab.</p><p>As mentioned, the <em>Min</em>&nbsp;and <em>Max</em>&nbsp;controls can be used to fine tune the control range for each module parameter- be sure to take some time and experiment with this, it’s really fun and powerful.</p><ul><li><strong><em>Using Perform Control Knobs and Automation With Stepped Module Controls</em></strong>- Note that modules with stepped knob "switch" controls (such as the Sync Divider, Random Task, and the Additive Oscillator) work great with automation and/or Perform Control knobs.<br></li></ul><h3>Assigning Control Buttons To The Perform Controls Panel</h3>'
+  -
+    type: image
+    image:
+      - /assets/screenshots/ug_pp_buttons.jpg
+    alignment: left
+  -
+    type: text
+    text: '<p>These work much the same as the Perform Control knobs, but are (obviously) intended for assignment to module button controls. They are momentary in nature (i.e. they send a brief on or off message when clicked). In the screenshot above, two Perform buttons are configured to control the two <em>Slope</em>&nbsp;toggle buttons of the Filter module.</p><h3>Perform Controls Right-Click Menu</h3>'
+  -
+    type: image
+    image:
+      - /assets/screenshots/ug_pp_right-click.jpg
+    alignment: left
+  -
+    type: text
+    text: '<p><em>Edit Value</em>- Opens a field where exact values can be entered.</p><p><em>Set To Default Value</em>- Returns knobs controls to their default value. It will be grayed out if the control is already at its default setting.</p><p><em>MIDI Learn/Unlearn</em>- MIDI CC controls can be assigned to <em>Perform</em>&nbsp;controls, allowing (amongst other things) real-time manipulation of multiple module parameters.</p><p><em>Automation Assign</em>- Assigns DAW automation slots to Perform controls. Please see the DAW Automation section for more information.</p><p><em>Unlearn All</em>- Cancels all MIDI CC, DAW, and <em>Perform</em>&nbsp;control assignments.</p><h3>Move It All Around</h3>'
+  -
+    type: image
+    image:
+      - /assets/screenshots/ug_pp_move.jpg
+    alignment: left
+  -
+    type: text
+    text: '<p>Don’t forget that, like the I/O Panel and cabinets, the <em>Perform</em>&nbsp;controls panel can be moved vertically by grabbing and dragging at the left side of its cabinet (highlighted in red above.. it doesn’t actually turn red, we just did that in Photoshop because we’re your pals).</p>'
+  -
+    type: buttons
+    buttons:
+      -
+        type: button
+        link_text: 'Continue to Settings'
+        url: /voltage-modular-user-guide/settings
+        target_blank: false
+        color: btn-yellow
+  -
+    type: text
+    text: '<p><br></p>'
+template: documentation
+seo:
+  description: 'The Perform controls panel contains nine knobs and four buttons that are freely assignable to control almost any controls within a module.'
+fieldset: documentation
+id: a7b109c4-4d36-40a6-999a-c4e71a68ee92

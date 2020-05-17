@@ -1,0 +1,45 @@
+license_key: e841c8a4-7cd5-41e7-bc5a-c9abb6fef18d
+locales:
+  en:
+    name: English
+    full: en_US
+    url: /
+timezone: UTC
+date_format: 'F jS, Y'
+default_extension: md
+filesystems:
+  content:
+    driver: local
+    root: site/content
+  storage:
+    driver: local
+    root: site/storage
+  users:
+    driver: local
+    root: site/users
+  themes:
+    driver: local
+    root: site/themes
+    url: /site/themes
+app_key: 8h5zdpOrs041tNHn8y7DUd2MaVVsf5nQ
+redactor:
+  -
+    name: Standard
+    settings:
+      buttons:
+        - formatting
+        - bold
+        - italic
+        - link
+        - unorderedlist
+        - orderedlist
+        - html
+  -
+    name: Basic
+    settings:
+      buttons:
+        - bold
+        - italic
+yaml_parser: symfony
+send_powered_by_header: true
+ensure_unique_ids: true
