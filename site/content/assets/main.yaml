@@ -1,7 +1,0 @@
-title: 'Main Assets'
-path: assets
-url: /assets
-assets:
-  pdfs/voltage-modular-user-guide.pdf:
-    title: 'Voltage Modular User Guide'
-    alt: 'Voltage Modular User Guide'
