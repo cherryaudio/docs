@@ -18,7 +18,6 @@ class DocsNav extends Tags
             dd($data);
         } else {
             $data = $this->parameters['from']->structureContents()['tree'];
-            dd($this->parameters['from']);
         }
         return $this->buildFromEntryIds($data);
     }
@@ -28,9 +27,6 @@ class DocsNav extends Tags
         return collect($entries)->map(function ($id, $key) {
             $entry = Entry::find($id['entry']);
             if (isset($id['children'])) {
-                if ($entry->title === 'Module Controls') {
-                    dd($entry->url(), url()->current(), Str::contains(url()->current(), $entry->url()));
-                }
                 return [
                     'title' => $entry->title,
                     'url' => $entry->url(),
