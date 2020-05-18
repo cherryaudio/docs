@@ -5,7 +5,7 @@ blueprints:
   - documentation
 mount: c08b0da8-6ffd-4fe0-998d-f760d58464a3
 revisions: false
-route: '/voltage-module-designer/{slug}'
+route: '/voltage-modular-designer/{{ slug }}'
 date: true
 sort_dir: asc
 date_behavior:
