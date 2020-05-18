@@ -40,7 +40,7 @@ body:
     image:
       - /assets/modules/ug_euclidean-duel-image-sync.jpg
     alignment: left
-template: documentation
+template: modules
 seo:
   description: 'The Euclidean Duel is a dual trigger sequencer based on the Euclidean geometric principle, where a selectable number of triggers are evenly distributed around the arc of a circle. It''s fantastic at creating unique rhythmic patterns, especially when both sequencers are used "against" each other to trigger percussive sounds. Euclidean Duel features extensive CV mod inputs for real-time pseudo-random music creation.'
   image: /assets/social-modules/euclidean-duel.png
