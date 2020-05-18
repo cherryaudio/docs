@@ -1,0 +1,11 @@
+.plyr--audio .plyr__controls {
+    @apply bg-gray-700 text-gray-200;
+}
+
+.plyr--full-ui input[type=range] {
+    @apply text-blue-gray-400;
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+    @apply bg-blue-gray-400;
+}

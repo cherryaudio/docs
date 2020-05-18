@@ -1,0 +1,47 @@
+.nav-collapse {
+    @apply w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-300 transition duration-150 ease-in-out;
+
+    &:hover {
+        @apply text-white bg-gray-700;
+    }
+
+    &:focus {
+        @apply outline-none text-white bg-gray-700;
+    }
+
+    &.open {
+        @apply rounded-t-md border-b border-gray-800 bg-gray-700;
+    }
+
+    &.closed {
+        @apply rounded-md;
+    }
+
+}
+.nav-panel {
+    @apply bg-gray-700 rounded-b-md p-4;
+}
+    
+.collapse {
+    @apply w-full flex items-center justify-between bg-gray-600 p-4 text-gray-200 transition duration-150 ease-in-out;
+
+    &:hover {
+        @apply text-gray-100 bg-gray-700;
+    }
+
+    &:focus {
+        @apply outline-none shadow-outline-gray text-white bg-gray-700;
+    }
+
+    &.open {
+        @apply border-b border-gray-800 rounded-t;
+    }
+
+    &.closed {
+        @apply border-transparent rounded shadow;
+    }
+    
+}
+.panel {
+    @apply bg-gray-700 px-4 rounded-b shadow;
+}

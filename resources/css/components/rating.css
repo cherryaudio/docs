@@ -1,0 +1,43 @@
+.rating {
+    @apply float-left;
+}
+
+.rating:not(:checked) > input {
+    @apply absolute h-0 w-0 overflow-hidden opacity-0;
+    clip: rect(0, 0, 0, 0);
+
+}
+
+.rating:not(:checked) > label {
+    @apply float-right overflow-hidden whitespace-no-wrap cursor-pointer text-gray-200 px-0 py-1 leading-5;
+    
+    width:1.2em;
+    font-size:200%;
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    @apply text-yellow-500;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    @apply text-gray-300;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    @apply text-yellow-700;
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
