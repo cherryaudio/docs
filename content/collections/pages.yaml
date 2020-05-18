@@ -1,9 +1,10 @@
 title: Pages
-route: '{{ parent_uri }}/{{ slug }}'
 blueprints:
   - default
   - documentation
   - gallery
+revisions: false
+route: '{{ parent_uri }}/{{ slug }}'
 structure:
   root: true
   tree:
@@ -52,8 +53,6 @@ structure:
         -
           entry: 1cca0652-bf72-43d4-82b2-c721b3bd0d99
           children:
-            -
-              entry: e568b5c2-5c3d-48d4-afe3-f2a845d314c9
             -
               entry: c12e70e8-77cf-4d6e-a85f-746849207d74
             -
@@ -183,8 +182,6 @@ structure:
             -
               entry: aa7930fa-ea31-4bd7-b508-2dbb7e0689f2
             -
-              entry: 94c3570f-eacb-4e72-951f-372f382cd037
-            -
               entry: 8a404664-064f-4858-8666-e7675e8f0538
             -
               entry: 52fe17d0-8aa4-4021-bcef-ed632f845977
@@ -286,8 +283,6 @@ structure:
           entry: 5e173176-7222-41f7-b0c6-339bda560c9c
           children:
             -
-              entry: cdf662cf-c527-4125-8087-65c449fc14ba
-            -
               entry: 8457a648-5b6f-4521-bf65-8ba0b6167916
             -
               entry: 591c6070-fbdd-4c8b-85f0-7d1b795cb83f
@@ -295,9 +290,6 @@ structure:
               entry: d0567c2e-9d32-4bc2-9176-8e3c0ad2b07d
         -
           entry: 8c86021d-2ac1-488c-9521-9cc9904afe70
-          children:
-            -
-              entry: b98eda3e-8953-4c7b-acc2-6980cc7bd3fc
     -
       entry: 1970bbb7-d450-4006-8f5b-292dbb36c396
       children:
