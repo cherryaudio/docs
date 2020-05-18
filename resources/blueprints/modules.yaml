@@ -191,4 +191,4 @@ sections:
         field:
           type: hidden
           display: template
-          default: documentation
+          default: modules
