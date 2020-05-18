@@ -1,0 +1,194 @@
+title: 'Module Documentation'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          display: Title
+          localizable: true
+      -
+        handle: categories
+        field:
+          options:
+            utilities: Utilities
+            effects: Effects
+            controllers: Controllers
+            processors: Processors
+            sources: Sources
+            cv-processors: 'CV Processors'
+            drums: Drums
+            envelope-generators: 'Envelope Generators'
+            filters: Filters
+            io: I/O
+            logic: Logic
+            metering: Metering
+            mixers: Mixers
+            oscillators: Oscillators
+            polyphonic-utilities: 'Polyphonic Utilities'
+            sequencers: Sequencers
+            switches: Switches
+            visualizers: Visualizers
+            instruments: Instruments
+          clearable: false
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          localizable: false
+          listable: hidden
+          display: Categories
+      -
+        handle: body
+        field:
+          type: bard
+          buttons:
+            - h1
+            - h2
+            - h3
+            - h4
+            - h5
+            - h6
+            - bold
+            - italic
+            - underline
+            - strikethrough
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - superscript
+            - subscript
+            - anchor
+            - assets
+            - code
+          style: sans
+          spellcheck: true
+          allow_source: true
+          allow_internal_links: true
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          semantic_elements: true
+          restrict_assets: false
+          display: Content
+          sets:
+            quote:
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                -
+                  handle: cite
+                  field:
+                    type: text
+              display: Quote
+            image:
+              fields:
+                -
+                  handle: image
+                  field:
+                    type: assets
+                    container: main
+                    folder: /
+                    restrict: false
+                -
+                  handle: alignment
+                  field:
+                    type: select
+                    default: left
+                    options:
+                      left: Left
+                      center: Center
+                      right: Right
+              display: Image
+            buttons:
+              display: 'Inline Links/Buttons'
+              fields:
+                -
+                  handle: alignment
+                  field:
+                    type: select
+                    options:
+                      text-center: Center
+                      '': Left
+                      text-right: Right
+                    display: Alignment
+                    default: text-center
+                -
+                  handle: buttons
+                  field:
+                    type: replicator
+                    sets:
+                      button:
+                        display: Button
+                        fields:
+                          -
+                            handle: link_text
+                            field:
+                              type: text
+                              width: 33
+                              display: 'Link Text'
+                          -
+                            handle: url
+                            field:
+                              type: text
+                              width: 33
+                              display: Url
+                          -
+                            handle: target_blank
+                            field:
+                              type: toggle
+                              width: 33
+                              display: 'Open In New Tab'
+                          -
+                            handle: color
+                            field:
+                              type: select
+                              options:
+                                btn-white: White
+                                btn-yellow: Yellow
+                                btn-black: Black
+                                btn-grey: Grey
+                              width: 50
+                              display: Color
+                          -
+                            handle: size
+                            field:
+                              type: select
+                              options:
+                                '': Regular
+                                btn-sm: Small
+                                btn-large: Large
+                              width: 50
+                              display: Size
+                    display: Buttons
+            video:
+              display: Video
+              fields:
+                -
+                  handle: video
+                  field:
+                    type: video
+                    display: Video
+            table:
+              display: Table
+              fields:
+                -
+                  handle: table
+                  field:
+                    type: table
+                    display: Table
+          folder: /
+          container: main
+      -
+        handle: template
+        field:
+          type: hidden
+          display: template
+          default: documentation
