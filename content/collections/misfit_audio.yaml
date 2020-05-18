@@ -1,0 +1,14 @@
+title: 'Misfit Audio'
+template: documentation
+layout: layout
+blueprints:
+  - modules
+  - documentation
+mount: 1970bbb7-d450-4006-8f5b-292dbb36c396
+revisions: false
+route: '/misfit-audio/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

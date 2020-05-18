@@ -1,0 +1,99 @@
+title: 'Voltage Module Designer'
+template: documentation
+layout: layout
+blueprints:
+  - documentation
+mount: c08b0da8-6ffd-4fe0-998d-f760d58464a3
+revisions: false
+route: '/voltage-module-designer/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  tree:
+    -
+      entry: 4060a197-2930-45ce-aef2-58608f4a042e
+    -
+      entry: b59aee0b-a0b1-4bfc-9b2d-c5ae43f1e65e
+    -
+      entry: 288837d6-e540-44cc-a3fa-b3d0bbce0d31
+    -
+      entry: 1a4a510f-1da1-49c0-9dca-5ec9e7588fb2
+    -
+      entry: 476c9f83-1de0-43f6-87f7-3fbd97836304
+    -
+      entry: 5dfd75bc-7ddb-4e8e-a755-0a7a688c9796
+    -
+      entry: 3bfee925-19d3-4220-9703-48bbac276409
+    -
+      entry: ddcc641e-c70a-4f3b-8265-f53dd5f1b597
+      children:
+        -
+          entry: 71e246e0-ac4b-442b-b1d0-985dbaf2ba24
+        -
+          entry: d0a7b55a-3083-4d64-a766-b5a33602aeac
+        -
+          entry: d7cc2730-352d-4155-b647-d1952645161c
+        -
+          entry: 73dbcca9-9c88-4889-8c14-b89665867068
+        -
+          entry: ebf917ca-4b51-497d-a2bc-82634b02b4b5
+        -
+          entry: 64a4e936-1e60-48fd-8c0a-725aa12a6508
+        -
+          entry: 067821bf-61c5-464f-a4ee-700434dac218
+        -
+          entry: 2cb75272-bd0e-4552-806a-674a482292d7
+        -
+          entry: c9f5a087-f768-4b69-9bee-576d2efc5142
+        -
+          entry: 5ae56a95-69ac-42bb-be20-fdc7a007cdf1
+        -
+          entry: de9822c3-140c-4ed1-8113-2fcd68e2a8db
+        -
+          entry: 3e4a351e-80cb-4817-8460-91edcaac4d68
+        -
+          entry: 92be0736-871c-4094-a06c-8b22812b7591
+        -
+          entry: 2feee9ec-ebcf-45d4-94c1-03fb3d952d1b
+        -
+          entry: 9fde1b44-6029-4577-8e0a-14559b8636b5
+    -
+      entry: dad3d7ab-9652-4096-9a5a-baa28b2cdf90
+      children:
+        -
+          entry: 224cbb84-2833-4e64-a668-c27334adcd53
+        -
+          entry: 0e8fb2c2-e126-4803-9ca0-4ced627a901b
+        -
+          entry: 6614ba2a-ea39-41aa-a0fc-c0161d21347f
+          children:
+            -
+              entry: e3538553-fb3e-497b-b194-71809aeb54de
+            -
+              entry: bb0f8ca4-83e0-42f8-b34b-d179baa3249a
+            -
+              entry: 1947a19f-02cb-4c05-95e5-1f24f2eb7c8b
+            -
+              entry: 3382d65d-7c88-4479-a5d6-9721f4e3d1dd
+            -
+              entry: 8f2d7e37-8fe6-428c-97e7-d509498f83ea
+            -
+              entry: d07ea705-2b54-43c4-86f1-ac8bbb4ca427
+            -
+              entry: 89abe28f-afc2-466f-87ef-9d1db7b30158
+            -
+              entry: 37d9fbd0-3e25-4ac7-bd01-f7539e66a336
+            -
+              entry: 3e682c5b-2adc-4705-9d86-462619d6dd88
+            -
+              entry: 49b1c2a6-0a1d-4dbb-ab34-6c4561085996
+            -
+              entry: 741d98b4-dfc0-466b-b9cc-20d623660798
+            -
+              entry: b51a2bce-963a-42c9-a9cc-aeb697863602
+        -
+          entry: cd815b2a-43e2-4055-ab68-ef52415f017b
