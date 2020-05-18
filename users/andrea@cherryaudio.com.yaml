@@ -11,3 +11,4 @@ preferences:
         - title
         - slug
         - categories
+      per_page: 25
