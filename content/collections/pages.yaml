@@ -12,61 +12,12 @@ structure:
       entry: db0ae4e3-4f10-4802-bc40-0b880cbf02c7
     -
       entry: 717abace-793e-4ca5-9fbd-cbdb3537eb13
-      children:
-        -
-          entry: ad805e9f-ada5-43b6-911b-c84b40a4f4db
-        -
-          entry: 4a4dd8b0-2759-4c2b-bd86-db2ebeb5c34a
-        -
-          entry: 9050429c-5ca6-4fe2-a7a9-78e70138c766
-        -
-          entry: 0c74489f-9649-47d9-aaff-a596d31e451b
-        -
-          entry: a7b109c4-4d36-40a6-999a-c4e71a68ee92
-        -
-          entry: 9f284c5c-8a1b-44e0-a66f-d97b1cef258d
-        -
-          entry: 9d1f788a-d388-4376-8285-5f0e07336928
-        -
-          entry: a96fd635-0079-40b3-adc1-39122d5981cc
-        -
-          entry: f1687409-912e-4b06-b3f6-52fec84cf2b4
-        -
-          entry: 660913e9-92c8-44d3-b21f-97b3d944f8cd
-        -
-          entry: 9d456cb4-7658-48c9-8afb-2b102a4c8815
-        -
-          entry: a7b2ac0b-6987-44d9-888b-f8969d0c9ec8
-        -
-          entry: 77e0c255-591f-41c1-8e96-6d6ab29943dd
-        -
-          entry: b9cb490e-7a4d-4281-912b-c0f129477d05
-        -
-          entry: f847029d-b77a-4901-8f9a-54ad2fa1a1b4
-        -
-          entry: 94873a90-0c37-4c80-93e0-015bd4409819
-        -
-          entry: be8b999b-8f9d-42e3-871d-cbea7f82cb53
     -
       entry: 5ecda239-0d3e-4179-9a5e-87d1c63e7da9
       children:
         -
           entry: 1cca0652-bf72-43d4-82b2-c721b3bd0d99
           children:
-            -
-              entry: c12e70e8-77cf-4d6e-a85f-746849207d74
-            -
-              entry: 073dc268-0c39-43a0-a67f-6c3d755c537f
-            -
-              entry: 280637ec-fa19-4746-bba0-ad657f46ec21
-            -
-              entry: 4ff26a9b-cf8d-4c72-9b60-60ce95a0ef52
-            -
-              entry: 6633b5f4-a767-4eb8-95cb-e8fad55dd01d
-            -
-              entry: 9725f1e3-943d-4071-96e3-aeb32115cc19
-            -
-              entry: 76129fe5-ebd8-457c-b6fe-ffb5a8dfbe36
             -
               entry: a80f1dfd-0e05-47e5-bce0-c05c76bf9846
             -
@@ -92,8 +43,6 @@ structure:
             -
               entry: ff0db89d-230d-4618-8127-b54f4b3959ce
             -
-              entry: a848c543-d4fa-41d3-827f-d4a7c510af65
-            -
               entry: dd880bcf-9069-45cf-a7dd-da78bde037d6
             -
               entry: c2487a01-d84c-4fb6-8a97-3c2566e9f79e
@@ -114,8 +63,6 @@ structure:
             -
               entry: 33204fea-dcf7-47af-a5fd-ae83eda194d5
             -
-              entry: 546119f3-6a8b-417a-ad84-78f7371eead4
-            -
               entry: 95b61c32-b07c-4c63-8046-2b5f160fb7f4
             -
               entry: 1c339173-9ffa-466b-a7c5-c9ff3006684f
@@ -135,8 +82,6 @@ structure:
               entry: 55b41ea5-531f-487b-8e3e-920eac011d06
             -
               entry: d346b7fc-54a9-4d3d-adc3-748f69e63cd9
-            -
-              entry: 44e40687-67d0-4d32-99af-bec6d3acb711
             -
               entry: add37664-7848-4504-a423-301f19f110e8
             -
@@ -159,8 +104,6 @@ structure:
               entry: ecad71f3-e12b-44f2-a0e6-b7dd660c51b2
             -
               entry: a14865e4-6023-4a4b-98e6-388aba07da68
-            -
-              entry: 82d11dec-485f-4f36-9542-ac7e83569fe6
             -
               entry: 2f25e828-bf7f-439e-bdb4-48bd03c0470e
             -
@@ -273,23 +216,6 @@ structure:
               entry: c84b92a9-49bc-4efd-8d7d-c287b3cd78c0
             -
               entry: 2fbe18c6-3a69-47a8-94b0-2d41b4413b6d
-        -
-          entry: 339496a2-1ed1-4cc7-92c7-6beaa1c921cf
-        -
-          entry: ee905317-a148-483f-97aa-e952718001e9
-        -
-          entry: 3dda25ee-d3f4-48e0-bed2-defc4b02f512
-        -
-          entry: 5e173176-7222-41f7-b0c6-339bda560c9c
-          children:
-            -
-              entry: 8457a648-5b6f-4521-bf65-8ba0b6167916
-            -
-              entry: 591c6070-fbdd-4c8b-85f0-7d1b795cb83f
-            -
-              entry: d0567c2e-9d32-4bc2-9176-8e3c0ad2b07d
-        -
-          entry: 8c86021d-2ac1-488c-9521-9cc9904afe70
     -
       entry: 1970bbb7-d450-4006-8f5b-292dbb36c396
       children:
@@ -372,8 +298,6 @@ structure:
               entry: 97a0763c-6b54-4cb4-b1bc-31b2992319cf
             -
               entry: d52e4f77-6d64-49f3-967a-221fc717a820
-            -
-              entry: 0a8dc054-2332-4231-9c8f-38232efcde1f
             -
               entry: c995ff91-ece2-41b7-879c-db7e2b74976e
             -
