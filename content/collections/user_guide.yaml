@@ -4,7 +4,7 @@ layout: layout
 blueprints:
   - documentation
 mount: 717abace-793e-4ca5-9fbd-cbdb3537eb13
-revisions: false
+revisions: true
 route: '/voltage-modular-user-guide/{slug}'
 date: true
 sort_dir: asc

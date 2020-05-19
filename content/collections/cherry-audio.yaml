@@ -5,7 +5,7 @@ blueprints:
   - modules
   - documentation
 mount: 5ecda239-0d3e-4179-9a5e-87d1c63e7da9
-revisions: false
+revisions: true
 route: '/cherry-audio/{categories}/{slug}'
 date: true
 sort_dir: asc

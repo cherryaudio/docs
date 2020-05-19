@@ -5,7 +5,7 @@ blueprints:
   - default
   - documentation
   - redirect
-revisions: false
+revisions: true
 route: '{{ parent_uri }}/{{ slug }}'
 sort_dir: asc
 structure:
