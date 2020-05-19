@@ -1,4 +1,7 @@
 module.exports = {
+  purge: [
+    './resources/views/**/*.html',
+  ],
   theme: {
     aspectRatio: {
       none: 0,
