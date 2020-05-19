@@ -26,7 +26,7 @@ class CollectionNav extends Tags
                 ;
                 return [
                     'group' => title_case(str_replace('-', ' ', $key)),
-                    'group_active' => Str::contains(url()->current(), $key),
+                    'group_active' => Str::contains(url()->current(), '/'.$key),
                     'children' => $item,
                 ];
             })
