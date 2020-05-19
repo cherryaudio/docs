@@ -1,20 +1,29 @@
-<h1 class="mb-8">{{ title }} </h1>
-
-{{ if content }}
-<div class="markdown">
-    {{ content | markdown }}
+<div class="bg-gray-200 pb-24 pb-32">
+    <header class="py-6 md:py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl leading-9 font-bold text-gray-700">
+                Search Results
+            </h1>
+        </div>
+    </header>
 </div>
-{{ /if }}
 
-{{ search:results }}
-    {{ if no_results }}
-    <h2>No results.</h2>
-    {{ else }}
+<main class="-mt-32">
+    <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="{{ container }} mx-auto">
+            <div class="grid grid-cols-3 gap-6">
+                {{ search:results }}
+                {{ if no_results }}
+                <h2>No results.</h2>
+                {{ else }}
 
-    <a href="{{ url }}" class="bg-grey-darkest no-underline block p-4 mb-4 hover:shadow text-lg font-semibold text-grey-lightest hover:underline">
-        {{ title }}
-    </a>
+                {{ partial:page }}
 
-    {{ /if }}
 
-{{ /search:results }}
+                {{ /if }}
+
+                {{ /search:results }}
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,20 @@
+title: Redirect
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          input_type: text
+          type: text
+          localizable: false
+          listable: hidden
+          display: Title
+      -
+        handle: redirect_to
+        field:
+          type: link
+          localizable: false
+          listable: hidden
+          display: 'Redirect To'

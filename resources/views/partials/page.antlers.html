@@ -1,0 +1,24 @@
+<div class="w-full h-full rounded shadow overflow-hidden bg-gray-700 flex flex-col">
+    <a href="{{ url }}" class="bg-gray-200  bg-cover bg-no-repeat no-underline bg-center flex items-center justify-center relative lg:h-64 {{ if !seo.image }}
+        blog-gradient {{ /if }}" {{ if seo.image }} style="background-image: url({{ glide:seo.image }})" {{ /if }}>
+        <img src="{{ seo.image }}" alt="{{ title }}" class="sr-only">
+    </a>
+    <div class="flex flex-col flex-grow">
+        <div class="p-4 flex flex-grow flex-col">
+            <a href="{{ url }}"
+                class="font-heading no-underline woodford text-yellow-500 text-xl block mb-2 hover:underline">{{ title }}</a>
+
+            {{ if blueprint.handle === 'modules' }}
+            <p class="text-gray-200 leading-normal mb-2"><span>{{ categories | ucfirst }}</span> | <a
+                    href="{{ collection.url }}" class="text-yellow-500 hover:underline">{{ collection.title }}</a></p>
+            {{ else }}
+            <p class="text-gray-200 leading-normal mb-2"><a href="{{ collection.url }}"
+                    class="text-yellow-500 hover:underline">{{ collection.title }}</a></p>
+            {{ /if }}
+        </div>
+        <div>
+            <a class="btn btn-primary text-center font-bold btn-lg btn-block rounded-none" href="{{ url }}">View
+                Page</a>
+        </div>
+    </div>
+</div>

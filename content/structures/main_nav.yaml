@@ -1,0 +1,18 @@
+title: 'Main Nav'
+collections:
+  - pages
+root: true
+tree:
+  -
+    entry: db0ae4e3-4f10-4802-bc40-0b880cbf02c7
+  -
+    entry: 717abace-793e-4ca5-9fbd-cbdb3537eb13
+  -
+    entry: c08b0da8-6ffd-4fe0-998d-f760d58464a3
+  -
+    title: Manufacturers
+    children:
+      -
+        entry: 5ecda239-0d3e-4179-9a5e-87d1c63e7da9
+      -
+        entry: 1970bbb7-d450-4006-8f5b-292dbb36c396

@@ -1,31 +1,17 @@
 <div class="h-screen flex overflow-hidden bg-gray-100">
-    <!-- Off-canvas menu for mobile -->
-    <div class="md:hidden">
+    <div x-data="{open:false}" class="md:hidden">
         <div class="fixed inset-0 flex z-40">
-            <!--
-        Off-canvas menu overlay, show/hide based on off-canvas menu state.
-
-        Entering: "transition-opacity ease-linear duration-300"
-          From: "opacity-0"
-          To: "opacity-100"
-        Leaving: "transition-opacity ease-linear duration-300"
-          From: "opacity-100"
-          To: "opacity-0"
-      -->
-            <div class="fixed inset-0">
+            <div x-show="open" x-transition:enter="transition-opacity ease-linear duration-300"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0" class="fixed inset-0">
                 <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
             </div>
-            <!--
-        Off-canvas menu, show/hide based on off-canvas menu state.
-
-        Entering: "transition ease-in-out duration-300 transform"
-          From: "-translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transition ease-in-out duration-300 transform"
-          From: "translate-x-0"
-          To: "-translate-x-full"
-      -->
-            <div class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-700">
+            <div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform"
+                x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                x-transition:leave="transition ease-in-out duration-300 transform"
+                x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
+                class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-800">
                 <div class="absolute top-0 right-0 -mr-14 p-1">
                     <button
                         class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
@@ -36,49 +22,59 @@
                         </svg>
                     </button>
                 </div>
-                <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                    <nav class="mt-5 px-2">
-                        {{ nav from="/{segment_1}" max_depth="4" }}
-                        <a href="{{ url }}" {{ if is_current || is_parent }} class="on" {{ /if }}>{{ title }}</a>
-                        {{ if is_current || is_parent }}
-                        {{ if children }}
-                        <ul>{{ *recursive children* }}</ul>
-                        {{ /if }}
-                        {{ /if }}
-                        {{ /nav }}
-                        <a href="#"
-                            class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150">
-                            <svg class="mr-4 h-6 w-6 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
-                                stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6" />
-                            </svg>
-                            Dashboard
-                        </a>
-                        <a href="#"
-                            class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150">
-                            <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
-                                stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            Team
-                        </a>
-                    </nav>
+                <div class="mt-5 flex-1 h-0 overflow-y-auto">
+                    <p class="woodford text-lg text-gray-200 px-3 py-2 mb-2">{{ collection.title }}</p>
+                    {{ collection-nav :from="collection" }}
+                    <div {{ if group_active }}x-data="{ open: true }" {{ else }}x-data="{ open: false }" {{ /if }}>
+                        <button x-on:click="open = !open" type="button"
+                            :class="{'bg-gray-850 rounded-t-md rounded-b-none border-b border-gray-600 hover:bg-gray-900': open, 'closed': !open }"
+                            class="nav-collapse closed">
+                            {{ group }}
+                            <span x-show="!open">
+                                <svg viewBox="0 0 20 20" fill="currentColor" class="mr-1 ml-2 h-5 w-5" style="">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <span x-show="open">
+                                <svg viewBox="0 0 20 20" fill="currentColor" class="mr-1 ml-2 h-5 w-5" style="">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            class="p-3 bg-gray-850 rounded-b-md">
+                            {{ children }}
+                            {{ if url === current_uri }}
+                            <a class="block text-yellow-500 py-1 hover:text-gray-100 hover:underline"
+                                href="{{ url }}">{{ title }}</a>
+                            {{ else }}
+                            <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
+                                href="{{ url }}">{{ title }}</a>
+                            {{ /if}}
+                            {{ /children }}
+                        </div>
+                    </div>
+                    {{ /collection-nav }}
                 </div>
             </div>
             <div class="flex-shrink-0 w-14">
-                <!-- Force sidebar to shrink to fit close icon -->
             </div>
         </div>
     </div>
 
-    <!-- Static sidebar for desktop -->
     <div class="hidden md:flex md:flex-shrink-0">
-        <div class="flex flex-col w-64 bg-gray-700">
-            <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-                <!-- Sidebar component, swap this element with another sidebar if you like -->
-                <nav class="flex-1 px-2 bg-gray-700">
+        <div class="flex flex-col w-64">
+            <div class="h-0 flex-1 flex flex-col overflow-y-auto">
+                <nav class="flex-1 px-2 py-4 bg-gray-800">
+                    <p class="woodford text-lg text-gray-200 px-3 py-2 mb-2">{{ collection.title }}</p>
                     {{ collection-nav :from="collection" }}
                     <div {{ if group_active }}x-data="{ open: true }" {{ else }}x-data="{ open: false }" {{ /if }}>
                         <button x-on:click="open = !open" type="button"
@@ -123,26 +119,8 @@
         </div>
     </div>
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
-        <div class="md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3">
-            <button
-                class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:bg-gray-200 transition ease-in-out duration-150"
-                aria-label="Open sidebar">
-                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-        <main class="flex-1 relative z-0 overflow-y-auto pt-2 pb-6 focus:outline-none md:py-6" tabindex="0">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 class="text-4xl font-semibold text-gray-900">{{ title }}</h1>
-            </div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                <article class="background bg-gray-100">
-                    {{ body }}
-                    {{ partial src="sets/{type}" }}
-                    {{ /body }}
-                </article>
-            </div>
-        </main>
+        {{ partial:search }}
+
+        {{ partial:article }}
     </div>
 </div>

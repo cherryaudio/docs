@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default search index
@@ -24,18 +23,16 @@ return [
     */
 
     'indexes' => [
-
         'default' => [
             'driver' => 'local',
-            'searchables' => 'all',
-            'fields' => ['title'],
+            'searchables' => ['collection:pages', 'collection:cherry-audio', 'collection:misfit-audio', 'collection:user_guide', 'collection:voltage-module-designer'],
+            'fields' => ['title', 'categories'],
         ],
 
         // 'blog' => [
         //     'driver' => 'local',
         //     'searchables' => 'collection:blog',
         // ],
-
     ],
 
     /*
@@ -51,7 +48,6 @@ return [
     */
 
     'drivers' => [
-
         'local' => [
             'path' => storage_path('statamic/search'),
         ],
@@ -62,7 +58,6 @@ return [
                 'secret' => env('ALGOLIA_SECRET', ''),
             ],
         ],
-
     ],
 
     /*
@@ -78,5 +73,4 @@ return [
     'defaults' => [
         'fields' => ['title'],
     ],
-
 ];
