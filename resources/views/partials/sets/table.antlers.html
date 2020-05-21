@@ -22,7 +22,7 @@
                 {{ elseif value | starts_with:XX }}
                 <td>{{ value | strikethrough }}</td>
                 {{ else }}
-                <td>{{ value | markdown | new }}</td>
+                <td>{{ value | markdown }}</td>
                 {{ /if }}
                 {{ /cells }}
             </tr>
