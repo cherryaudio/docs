@@ -1,3 +1,4 @@
+title: Documentation
 sections:
   main:
     display: Main
@@ -118,7 +119,7 @@ sections:
                               type: select
                               options:
                                 btn-white: White
-                                btn-yellow: Yellow
+                                btn-primary: Yellow
                                 btn-black: Black
                                 btn-grey: Grey
                               width: 50
@@ -152,11 +153,14 @@ sections:
                     display: Table
           folder: /
           container: main
+          listable: hidden
+          save_html: false
+          toolbar_mode: floating
+          reading_time: false
+          fullscreen: true
       -
         handle: template
         field:
           type: hidden
           display: template
           default: documentation
-taxonomies: true
-title: Documentation
