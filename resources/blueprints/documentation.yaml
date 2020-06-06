@@ -151,6 +151,13 @@ sections:
                   field:
                     type: table
                     display: Table
+                -
+                  handle: has_header
+                  field:
+                    type: toggle
+                    localizable: false
+                    listable: hidden
+                    display: 'Has Header'
           folder: /
           container: main
           listable: hidden

@@ -32,6 +32,7 @@ sections:
             switches: Switches
             visualizers: Visualizers
             instruments: Instruments
+            midi: MIDI
           clearable: false
           multiple: false
           searchable: true

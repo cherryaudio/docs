@@ -9,6 +9,9 @@ preferences:
     cherry-audio:
       columns:
         - title
-        - slug
         - categories
       per_page: 25
+    misfit-audio:
+      columns:
+        - title
+        - categories
