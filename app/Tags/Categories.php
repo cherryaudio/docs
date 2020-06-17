@@ -6,9 +6,9 @@ use Illuminate\Support\Str;
 use Statamic\Tags\Collection\Entries;
 use Statamic\Tags\Tags;
 
-class CollectionNav extends Tags
+class Categories extends Tags
 {
-    protected static $handle = 'collection-nav';
+    protected static $handle = 'nav-categories';
 
     public function index()
     {
@@ -23,15 +23,27 @@ class CollectionNav extends Tags
             })
             ->groupBy('categories')
             ->map(function ($item, $key) {
-                ;
                 return [
-                    'group' => title_case(str_replace('-', ' ', $key)),
+                    'key' => $key,
+                    'group' => $this->getGroupLabel($key),
                     'group_active' => Str::contains(url()->current(), '/'.$key),
                     'children' => $item,
                 ];
             })
-            ->sortBy('group')
+            ->sortBy('key')
             ->values()
             ->toArray();
+    }
+
+    private function getGroupLabel($key)
+    {
+        if ($key === 'cv-processors') {
+            return 'CV Processors';
+        } elseif ($key === 'io') {
+            return 'I/O';
+        } elseif ($key === 'midi') {
+            return 'MIDI';
+        }
+        return title_case(str_replace('-', ' ', $key));
     }
 }

@@ -445,3 +445,96 @@
         </div>
     </div>
 </nav>
+<nav class="hidden md:block bg-gray-600 w-full fixed sticky">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="border-b border-gray-700">
+            <div class="flex items-center justify-between h-16 px-4 sm:px-0">
+                <div class="flex items-center">
+                    <div class="hidden md:block">
+                        <div class="flex items-baseline">
+                            {{ nav:main_nav }}
+                            {{ if children }}
+                            <div class="ml-4 relative" x-data="{open:false}">
+                                <div>
+                                    <button
+                                        class="max-w-xs flex items-center text-sm text-gray-200 rounded-md focus:outline-none px-3 py-2 hover:bg-gray-700 {{ if is_current || is_parent }} bg-gray-900 {{ /if }}"
+                                        @click="open = !open" @keydown.window.escape="open = false"
+                                        x-on:click.away="open = false" id="{{ title }}-menu"
+                                        aria-label="{{ title }} menu" :aria-open="open" aria-haspopup="true">
+                                        {{ title }}
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="ml-2 h-5 w-5">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100 z-50"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75 transform"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+                                    <div class="py-1 rounded-md bg-white shadow-xs" role="menu"
+                                        aria-orientation="vertical" aria-labelledby="{{ title }}-menu">
+                                        {{ children }}
+                                        <a href="{{ url }}"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 transition ease-in-out duration-150"
+                                            role="menuitem">{{ title }}</a>
+                                        {{ /children }}
+                                    </div>
+                                </div>
+                            </div>
+                            {{ else }}
+                            {{ if is_current }}
+                            <a href="{{ url }}"
+                                class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 hover:bg-black focus:outline-none focus:text-white focus:bg-gray-700 {{ if !first }}ml-4{{ /if }}">
+                                {{ title }}
+                            </a>
+                            {{ else }}
+                            <a href="{{ url }}"
+                                class="px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-850 {{ if !first }}ml-4{{ /if }}">
+                                {{ title }}
+                            </a>
+                            {{ /if }}
+                            {{ /if }}
+                            {{ /nav:main_nav }}
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <form action="/search" method="get" class="mr-4">
+                            <label for="email" class="sr-only">Search</label>
+                            <div class="relative rounded-full">
+                                <div
+                                    class="absolute inset-y-0 left-0 pl-3 text-gray-400 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4ZM2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8C14 9.29583 13.5892 10.4957 12.8907 11.4765L17.7071 16.2929C18.0976 16.6834 18.0976 17.3166 17.7071 17.7071C17.3166 18.0976 16.6834 18.0976 16.2929 17.7071L11.4765 12.8907C10.4957 13.5892 9.29583 14 8 14C4.68629 14 2 11.3137 2 8Z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <input id="search" name="q" value=""
+                                    class="form-input bg-gray-700 border-gray-800 text-gray-200 block w-full pl-10 hover:bg-gray-600 focus:bg-gray-600 sm:text-sm sm:leading-5 transition duration-150 ease-in-out">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button x-on:click="open = !open"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

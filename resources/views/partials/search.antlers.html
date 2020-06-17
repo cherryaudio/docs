@@ -12,7 +12,6 @@
             {{ if children }}
             <div class="ml-4 relative" x-data="{open:false}">
                 <div>
-
                     <button class="max-w-xs flex items-center text-sm rounded-full focus:outline-none"
                         @click="open = !open" @keydown.window.escape="open = false" x-on:click.away="open = false"
                         id="{{ title }}-menu" aria-label="{{ title }} menu" :aria-open="open" aria-haspopup="true">

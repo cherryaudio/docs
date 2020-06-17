@@ -1,0 +1,25 @@
+title: SEO
+fields:
+  -
+    handle: meta_description
+    field:
+      character_limit: '160'
+      type: textarea
+      instructions: 'Every URL in your site should have a unique Meta Description, ideally less than 160 characters long.'
+      localizable: false
+      listable: hidden
+      display: 'Meta Description'
+  -
+    handle: social_image
+    field:
+      mode: grid
+      container: main
+      folder: social-modules
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      type: assets
+      instructions: 'This image is used as a social network preview image.'
+      localizable: false
+      listable: hidden
+      display: 'Social Image'

@@ -24,6 +24,22 @@
     <meta name="msapplication-config" content="{{ theme:img src="favicons/browserconfig.xml" }}">
     <meta name="theme-color" content="#ffffff">
 
+    <meta name="description" content="{{ meta_description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:site_name" content="Cherry Audio">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="{{ social_image }}">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="1000">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@voltagemodular">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ meta_description }}">
+    <meta name="twitter:image" content="{{ social_image }}">
+
     <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
@@ -39,11 +55,49 @@
     </script>
 </head>
 
-<body>
+<body class="bg-gray-850">
 
-    {{ partial:nav }}
+    <div class="bg-white">
+        <div class="bg-gray-200 pb-24 pb-32 pt-32">
+            <div class="w-full fixed top-0 z-100">
+                {{ partial:nav }}
+            </div>
 
-    {{ template_content }}
+            <header class="py-6 md:py-10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    {{ if url !== '/' }}
+                    <nav class="flex items-center text-sm leading-5 font-medium">
+                        {{ nav:breadcrumbs }}
+                        <a href="{{ url }}"
+                            class="text-gray-700 hover:text-gray-850 hover:underline transition duration-150 ease-in-out">{{ title }}
+                        </a>
+                        {{ if !is_current }}
+                        <svg class="flex-shrink-0 mx-2 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        {{ /if }}
+                        {{ /nav:breadcrumbs }}
+                    </nav>
+                    {{ /if }}
+                    <h1 class="text-3xl leading-9 font-bold text-gray-850 flex items-center">
+                        {{ title }}
+                        {{ if categories }}
+                        <span
+                            class="ml-2 mt-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-gray-700 text-gray-200">
+                            {{ categories }}
+                        </span>
+                        {{ /if }}
+                    </h1>
+
+                </div>
+            </header>
+        </div>
+
+        {{ template_content }}
+    </div>
+
 
     {{ partial:footer }}
 

@@ -1,6 +1,6 @@
 <div class="w-full h-full rounded shadow overflow-hidden bg-gray-700 flex flex-col">
-    <a href="{{ url }}" class="bg-gray-200  bg-cover bg-no-repeat no-underline bg-center flex items-center justify-center relative lg:h-64 {{ if !seo.image }}
-        blog-gradient {{ /if }}" {{ if seo.image }} style="background-image: url({{ glide:seo.image }})" {{ /if }}>
+    <a href="{{ url }}" class="bg-gray-200  bg-cover bg-no-repeat no-underline bg-center flex items-center justify-center relative lg:h-64 {{ if !socail_image }}
+        blog-gradient {{ /if }}" {{ if social_image }} style="background-image: url({{ social_image }})" {{ /if }}>
         <img src="{{ seo.image }}" alt="{{ title }}" class="sr-only">
     </a>
     <div class="flex flex-col flex-grow">
@@ -16,9 +16,14 @@
                     class="text-yellow-500 hover:underline">{{ collection.title }}</a></p>
             {{ /if }}
         </div>
-        <div>
-            <a class="btn btn-primary text-center font-bold btn-lg btn-block rounded-none" href="{{ url }}">View
-                Page</a>
+        <div class="flex items-center">
+            <a class="flex-1 btn btn-primary btn-lg block text-center rounded-none text-center" href="{{ url }}">View
+                Documentation</a>
+            {{ if blueprint.handle === 'modules' }}
+            <a class="flex-1 btn btn-accent btn-lg block text-center rounded-none"
+                href="https://store.cherryaudio.com/modules/{{ slug }}" target="_blank">View
+                Product</a>
+            {{ /if }}
         </div>
     </div>
 </div>
