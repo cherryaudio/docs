@@ -10,7 +10,7 @@ body:
       values:
         type: image
         image:
-          - ug_FMstationAll.jpg
+          - ug_polyFMstat3_all.jpg
         alignment: left
         add_shadow: false
   -
@@ -18,7 +18,14 @@ body:
     content:
       -
         type: text
-        text: 'FM Station is a digital oscillator inspired by the Yamaha DX/TX-series synths. Like the classic Yamaha synths of the 80s, it uses frequency-modulation (FM) synthesis to create tones. In their day, they were giant step forward for and delivered an entirely new palette of sounds. Unfortunately, the original Yamaha synths gained a reputation for being difficult to program and as a result, most users simply used the factory presets. '
+        text: 'Poly FM Station is a digital oscillator inspired by the Yamaha DX/TX-series synths. It is mostly identical to the "mono" FM Station module.'
+      -
+        type: hard_break
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'Like the classic Yamaha synths of the 80s, it uses frequency-modulation (FM) synthesis to create tones. In their day, they were giant step forward for and delivered an entirely new palette of sounds. Unfortunately, the original Yamaha synths gained a reputation for being difficult to program and as a result, most users simply used the factory presets. '
       -
         type: hard_break
       -
@@ -32,14 +39,14 @@ body:
         type: hard_break
       -
         type: text
-        text: 'With this in mind, we designed FM Station to be as easy to understand and program as possible - all of its main parameters are indicated by colored bars, some of which change colors to clarify their current function. In plain English, FM Station is really fun and easy to use. We had a blast developing it and playingz it - we hope you enjoy it as much as we do! '
+        text: 'With this in mind, we designed Poly FM Station to be as easy to understand and program as possible - all of its main parameters are indicated by colored bars, some of which change colors to clarify their current function. In plain English, Poly FM Station is really fun and easy to use. We had a blast developing it and playing it - we hope you enjoy it as much as we do! Because it''s basically identical to the mono version of the FM Station module, we''ll generically refer to it as simply as "FM Station."'
       -
         type: hard_break
       -
         type: hard_break
       -
         type: text
-        text: 'One more note: You''ll likely need a fairly large number of envelope generators to optimally use FM Station. We contemplated building envelopes directly into the module, but this would''ve necessitated either hiding them behind tabs or pop-ups, or making a really large module, neither of which sits well with our "make all controls visible and grabbable at once" design philosophy. Instead, we created the '
+        text: 'One more note: You''ll likely need a fairly large number of envelope generators to optimally use the mono or poly  FM Station modules. We contemplated building envelopes directly into the module, but this would''ve necessitated either hiding them behind tabs or pop-ups, or making a really large module, neither of which sits well with our "make all controls visible and grabbable at once" design philosophy. Instead, we created the '
       -
         type: text
         marks:
@@ -48,7 +55,7 @@ body:
         text: 'EG Station'
       -
         type: text
-        text: ' module. Intended to sit directly beneath FM station, its eight ADSR envelope generators should be plenty to cover any EG mod needs when using FM Station. That said, '
+        text: ' module in mono and poly versions. Intended to sit directly beneath FM station, its eight ADSR envelope generators should be plenty to cover any EG mod needs when using FM Station. That said, the '
       -
         type: text
         marks:
@@ -57,7 +64,7 @@ body:
         text: 'EG Station'
       -
         type: text
-        text: ' can of course be used in conjunction with any other Voltage modules. '
+        text: ' modules can of course be used in conjunction with any other Voltage modules. '
   -
     type: heading
     attrs:
@@ -364,13 +371,7 @@ body:
         text: phase
       -
         type: text
-        text: ' relationship between the two waves. Because both waves are constantly moving up and down, the effect is roughly the same on the resulting output wave. One analogy might be to consider flicking a yo-yo up and down as opposed to forward and backward -'
-      -
-        type: text
-        marks:
-          -
-            type: bold
-        text: ' the resulting motion is essentially the same, just in a different plane, and the same applies to the audible results here. '
+        text: ' relationship between the two waves. Because both waves are constantly moving up and down, the effect is roughly the same on the resulting output wave. '
   -
     type: set
     attrs:
@@ -385,21 +386,80 @@ body:
     content:
       -
         type: text
-        text: 'So why would Yamaha choose phase modulation over frequency modulation? As it turns out, it takes less computational horsepower to perform phase modulation synthesis. This was an important consideration in light of the relatively limited computer horsepower available in the 80s. The other reason is that FM synthesis makes use of feedback loops for further tone colors, and with pure FM, these loops cause oscillators to go badly out of tune - with PM, tuning isn''t an issue (we''ll discuss these feedback loops later on). '
+        text: 'There is one interesting quirk of phase modulation that''s good be aware of - because the '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: Freq/Ratio
+      -
+        type: text
+        text: ' CV inputs affect phase, pitch changes are only audible '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: 'when the mod source is moving.'
+      -
+        type: text
+        text: ' In other words, a constant DC voltage patched to a '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: Freq/Ratio
+      -
+        type: text
+        text: ' CV input (such as a keyboard pitch CV) won''t affect pitch. Similarly, modulation waves with "straight" angles (such as sawtooth or triangle waves) will essentially sound the same as square wave mod, because their rate of change remians the same through their cycle, as opposed to a curve that''s constantly changing - this is why all of FM Station''s waveforms are curved. '
   -
     type: paragraph
     content:
       -
         type: text
-        text: 'We don''t know why Yamaha continued to refer to DX/TX synthesis as FM as opposed to PM. Perhaps it was to capitalize on the prestige of the aforementioned John Chowing/Stanford research, or maybe they just thought FM had a better ring to it. Regardless, we''ll continue to refer to it as "FM synthesis," even though it technically isn''t. '
+        text: 'A good analogy to understand phase mod is the doppler effect. When a car drives by honking its horn, the pitch of the horn changes as the car travels by, but if the car stops moving at any distance, the pitch of the horn remains constant. If you''ve ever messed with the time knob on an analog delay, they behave in the same way - pitch change is only audible while adjusting the delay time, and "catches up" as soon as you stop moving the knob. This is because a delay is performing exactly the same function - it''s changing the phase (i.e. distance) of two copies of the same audio material. '
   -
-    type: heading
-    attrs:
-      level: 2
+    type: paragraph
     content:
       -
         type: text
-        text: 'FM Station Basic Architecture'
+        text: 'Note that this only applies to the '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: Freq/Ratio
+      -
+        type: text
+        text: ' CV inputs; the '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: 'Fine '
+      -
+        type: text
+        text: 'control bar and CV inputs are "standard" pitch CV ins (i.e. not phase mod) as is the master '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: 'Freq Mod'
+      -
+        type: text
+        text: ' CV in at the far left of the panel. '
+      -
+        type: hard_break
+      -
+        type: hard_break
+      -
+        type: text
+        text: 'Why did Yamaha choose phase modulation over frequency modulation? As it turns out, it takes less computational horsepower to perform phase modulation synthesis. This was an important consideration in light of the relatively limited computer horsepower available in the 80s. The other reason is that FM synthesis makes use of feedback loops for further tone colors, and with pure FM, these loops cause oscillators to go badly out of tune - with PM, tuning isn''t an issue (we''ll discuss these feedback loops later on). FM Station Basic Architecture'
   -
     type: paragraph
     content:
@@ -427,7 +487,7 @@ body:
       values:
         type: image
         image:
-          - ug_FMstat_CVrect.jpg
+          - ug_FMstat_CVrect-1593474867.jpg
         alignment: left
         add_shadow: false
   -
@@ -446,13 +506,22 @@ body:
             type: bold
       -
         type: text
-        text: "FM Station's main controls are a bit of a departure from other Cherry Audio modules. Instead of standard knobs or sliders, its main controls are colored illuminated bars. These work just like the slider controls in other modules. To change values, grab the control bar at its top edge and move it or click anywhere in the control travel to jump to the setting (this is helpful when the control is set to minimum; you won't have to precisely click the tiny visible region of the bar). Hovering the mouse on a control bar causes it to light up. The controls bars behave the same as any standard Voltage slider control- right-clicking them allows all standard operations including Perform and MIDI controller assignments.\_ "
+        text: 'FM Station''s main controls are a bit of a departure from other Cherry Audio modules. Instead of standard knobs or sliders, its main controls are colored illuminated bars. These work just like the slider controls in other modules. To change values, grab the control bar at its top edge and move it or click anywhere in the control travel to jump to the setting (this is helpful when the control is set to minimum; you won''t have to precisely click the tiny visible region of the bar). Hovering the mouse on a control bar causes it to light up. The controls bars behave the same as any standard Voltage slider control- right-clicking them allows all standard operations including '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: Perform
+      -
+        type: text
+        text: " and MIDI controller assignments.\_ "
   -
     type: paragraph
     content:
       -
         type: text
-        text: "You'll also notice the unfilled rectangular CV input indicators bars. These act as meters and display incoming mod CV levels in real-time. Besides being great eye candy, they're useful for quickly determining which carrier operators are making sound while under CV control.\_"
+        text: "You'll also notice the unfilled rectangular CV input indicators bars. These act as meters and display the sum of incoming poly mod CV levels in real-time. Besides being great eye candy, they're useful for quickly determining which carrier operators are making sound while under CV control.\_"
   -
     type: paragraph
     content:
@@ -461,16 +530,16 @@ body:
         marks:
           -
             type: bold
-        text: 'Pitch CV jack'
+        text: 'Poly Pitch CV jack'
       -
         type: text
-        text: '- Accepts a CV input for pitch. Typically this would come from the '
+        text: '- Accepts a poly CV input for pitch. Typically this would come from the '
       -
         type: text
         marks:
           -
             type: italic
-        text: Pitch
+        text: 'Poly Pitch'
       -
         type: text
         text: ' jack in the IO Panel '
@@ -479,10 +548,10 @@ body:
         marks:
           -
             type: italic
-        text: 'CV Out'
+        text: 'Poly Sources'
       -
         type: text
-        text: ' section, or from a sequencer pitch CV out.'
+        text: ' section.'
   -
     type: paragraph
     content:
@@ -494,7 +563,7 @@ body:
         text: Range
       -
         type: text
-        text: '- Sets the basic pitch of the oscillator, displayed in traditional organ footage. Unlike most other oscillators in Voltage Modular, there are only three range settings. This is because the '
+        text: '- Sets the basic pitch of the oscillators, displayed in traditional organ footage. Unlike most other oscillators in Voltage Modular, there are only three range settings. This is because the '
       -
         type: text
         marks:
@@ -567,10 +636,19 @@ body:
         marks:
           -
             type: italic
-        text: 'Mix '
+        text: 'P-Mix '
       -
         type: text
-        text: 'jack output; modulator oscillators are routed only to carrier '
+        text: '(poly) and '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: 'M-Mix '
+      -
+        type: text
+        text: '(mono) output jacks; modulator oscillators are routed only to carrier '
       -
         type: text
         marks:
@@ -606,7 +684,7 @@ body:
         text: 'Op4 '
       -
         type: text
-        text: 'individual outputs along right side of the panel. The '
+        text: 'individual poly outputs along right side of the panel. The '
       -
         type: text
         marks:
@@ -621,17 +699,44 @@ body:
         marks:
           -
             type: italic
-        text: 'Mix '
+        text: P-Mix
       -
         type: text
-        text: 'out as well as individual outs.'
+        text: ' and '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: 'M-Mix '
+      -
+        type: text
+        text: 'outs as well as the individual poly outs.'
       -
         type: hard_break
       -
         type: hard_break
       -
         type: text
-        text: 'Algorithms are selected by clicking on the diagrams. The numbered operator boxes and outline frame will be colored for the currently active algorithm. A couple of things happen to help clarify which operators are currently configured as carriers and modulators in the currently selected algorithm. The text in the large colored buttons beneath the algorithm boxes changes to display CAR or MOD to indicate the status of each operator...'
+        text: 'Algorithms are selected by clicking on the diagrams. The numbered operator boxes and outline frame will be colored for the currently active algorithm. A couple of things happen to help clarify which operators are currently configured as carriers and modulators in the currently selected algorithm. The text in the large colored buttons beneath the algorithm boxes changes to display '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: CAR
+      -
+        type: text
+        text: ' or '
+      -
+        type: text
+        marks:
+          -
+            type: italic
+        text: MOD
+      -
+        type: text
+        text: ' to indicate the status of each operator...'
   -
     type: set
     attrs:
@@ -662,7 +767,7 @@ body:
       values:
         type: image
         image:
-          - ug_FMstat_amplBarColor.jpg
+          - ug_FMstat_amplBarColor-1593474878.jpg
         alignment: left
         add_shadow: false
   -
@@ -709,7 +814,7 @@ body:
     content:
       -
         type: text
-        text: 'Algorithm 6 configures operators 1, 2, and 3 as audio sources, and operator 4 as a the sole mod source (with feedback loop). Algorithm 6 also resembles the gearshift pattern of my uncle''s ''74 Triumph Stag, which had some wicked electrical issues. '
+        text: 'Algorithm 6 configures operators 1, 2, and 3 as audio sources, and operator 4 as a the sole mod source (with feedback loop). Algorithm 6 also resembles the gearshift pattern of my cousin''s ''71 Jensen Interceptor, which had chronic brake fluid issues. '
   -
     type: set
     attrs:
@@ -778,7 +883,7 @@ body:
         marks:
           -
             type: bold
-        text: 'Freq/Ratio control bar, CV input and attenuator'
+        text: 'Freq/Ratio control bar, poly CV input and attenuator'
       -
         type: text
         text: '- This really a fancy name for pitch. These are tuned to the standard harmonic series of even overtones. They go from 0.25 of the base pitch all the way up to the 32nd overtone. It''s unlikely you''ll use the higher values as basic oscillator tones, but they higher values are intended for use as modulator sources, and they''re the key to getting the signature FM bell-type sounds. '
@@ -796,7 +901,7 @@ body:
         marks:
           -
             type: bold
-        text: 'Fine freq control bar, CV input and attenuator'
+        text: 'Fine freq control bar, poly CV input and attenuator'
       -
         type: text
         text: '- This acts as a detune control with a range of up or down one octave, and default position at center. The CV input allows control via CV. This is a bipolar control with the middle position representing zero. Negative CV control decreases as the knob is dialed to the left; positive CV control increases as the knob is dialed to the right. '
@@ -808,7 +913,7 @@ body:
         marks:
           -
             type: bold
-        text: 'Amplitude control bar, CV input and attenuator'
+        text: 'Amplitude control bar, poly CV input and attenuator'
       -
         type: text
         text: '- Sets the overall volume of the operator. If the operator is currently configured as a carrier, this affects the audio output level in the '
@@ -826,7 +931,7 @@ body:
     content:
       -
         type: text
-        text: 'The CV input allows control via CV. This is a bipolar control with the middle position representing zero. Negative CV control decreases as the knob is dialed to the left; positive CV control increases as the knob is dialed to the right. '
+        text: 'The poly CV input allows control via CV. This is a bipolar control with the middle position representing zero. Negative CV control decreases as the knob is dialed to the left; positive CV control increases as the knob is dialed to the right. '
   -
     type: paragraph
     content:
@@ -874,7 +979,7 @@ body:
         marks:
           -
             type: bold
-        text: 'Feedback control bar, CV input and attenuator (Operator 4 only)'
+        text: 'Feedback control bar, poly CV input and attenuator (Operator 4 only)'
       -
         type: text
         text: '- FM synthesis makes use of feedback, present in operator 4 in FM Station. This routes the output of operator 4 back to its own '
@@ -917,9 +1022,8 @@ body:
   -
     type: paragraph
 template: modules
-updated_at: 1592508040
-updated_by: a0ce54e0-bf71-4d4c-a5b9-7182705c1bfa
-id: 8c15ad0d-461c-41d8-a871-e3f0f0d6093b
-published: false
+updated_at: 1594481057
+updated_by: 8e971c27-4141-4dd8-b8ef-f0a8bfc35d61
 blueprint: modules
+id: 8c15ad0d-461c-41d8-a871-e3f0f0d6093b
 ---

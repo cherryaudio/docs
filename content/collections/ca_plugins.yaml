@@ -1,0 +1,52 @@
+title: DCO-106
+template: documentation
+layout: layout
+blueprints:
+  - documentation
+  - modules
+mount: 1169629e-0e87-4bde-b7a7-516c06331f42
+revisions: false
+route: '/cherry-audio/virtual-instruments/dco-106/{slug}'
+date: true
+sort_dir: asc
+default_status: draft
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  tree:
+    -
+      entry: c51fc3bc-c4b4-48dc-9f8e-b86f8115bf55
+    -
+      entry: 91bb3b42-82ba-44a4-984e-fd72cd95c6d0
+    -
+      entry: aeb39afc-6a4a-4eea-8eac-c5ada90c3384
+    -
+      entry: 1fef1970-377f-4b0b-b5ea-ca9a64881161
+    -
+      entry: 97d6bbc1-5b9a-440d-8101-a33ff2aaedef
+    -
+      entry: 7e9f8e03-5f03-41a1-85db-d6fee8c222b6
+    -
+      entry: 66f2667b-72b6-49d1-b292-78c1a5d321a7
+    -
+      entry: 7b64ff4f-0c54-4290-b42d-e9aedf8c0ede
+    -
+      entry: 1d7d2efe-824a-4597-a55d-6d71f6f782e5
+    -
+      entry: ae5d3867-a3c0-4faa-88d3-3a8642356dea
+    -
+      entry: 7436a308-7f0a-4bbc-a747-4071deb66454
+    -
+      entry: c5a0551b-16e4-465c-9cd3-55106b1544b1
+    -
+      entry: 60398e52-2b19-4a2b-9373-bfc19e7d96b6
+    -
+      entry: d74b68de-66ec-42ad-9607-8c14f6c5fc26
+    -
+      entry: f2837b4c-a96e-49e4-97ec-7df15c023beb
+    -
+      entry: 19138bc6-f312-4883-a30e-d9671b2bfe18
+    -
+      entry: da876c07-3e76-429d-b1a3-9ccaf5470c60

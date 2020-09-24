@@ -1,4 +1,4 @@
-title: 'Cherry Audio'
+title: 'Cherry Audio Modules'
 template: documentation
 layout: layout
 blueprints:
@@ -8,6 +8,7 @@ mount: 5ecda239-0d3e-4179-9a5e-87d1c63e7da9
 revisions: true
 route: '/cherry-audio/{slug}'
 sort_dir: asc
+default_status: draft
 date_behavior:
   past: public
   future: private

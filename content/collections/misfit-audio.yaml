@@ -6,8 +6,9 @@ blueprints:
   - documentation
 mount: 1970bbb7-d450-4006-8f5b-292dbb36c396
 revisions: true
-route: '/misfit-audio/{categories}/{slug}'
+route: '/misfit-audio/{slug}'
 sort_dir: asc
+default_status: draft
 date_behavior:
   past: public
   future: private
