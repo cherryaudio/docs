@@ -6,7 +6,7 @@ blueprints:
   - modules
 mount: 1169629e-0e87-4bde-b7a7-516c06331f42
 revisions: false
-route: '/cherry-audio/virtual-instruments/dco-106/{slug}'
+route: '/cherry-audio/instruments/ca2600/{slug}'
 date: true
 sort_dir: asc
 default_status: draft
@@ -17,28 +17,38 @@ structure:
   root: false
   tree:
     -
-      entry: c51fc3bc-c4b4-48dc-9f8e-b86f8115bf55
+      entry: fa2fcdeb-a4df-44fe-99a5-352ba47a5ed7
     -
-      entry: 91bb3b42-82ba-44a4-984e-fd72cd95c6d0
+      entry: 50105425-1d67-4269-8211-1b91ad517fd0
     -
-      entry: 1fef1970-377f-4b0b-b5ea-ca9a64881161
+      entry: d88e4f75-1a04-4bf4-addc-378e952fed37
     -
-      entry: 7e9f8e03-5f03-41a1-85db-d6fee8c222b6
+      entry: 72f96b00-1dbc-4347-a465-2ebf827cbc97
     -
-      entry: 66f2667b-72b6-49d1-b292-78c1a5d321a7
+      entry: 0c725fda-9690-4e03-b6c9-ecbddf5b1914
     -
-      entry: 7b64ff4f-0c54-4290-b42d-e9aedf8c0ede
+      entry: 486ed300-7c18-49a4-9377-b7d179364f1b
     -
-      entry: 60398e52-2b19-4a2b-9373-bfc19e7d96b6
+      entry: 12961c1c-68dc-45e2-a96e-3ae894100354
     -
-      entry: aeb39afc-6a4a-4eea-8eac-c5ada90c3384
+      entry: 973eaa39-c6db-4e4d-ac5c-48d1de969785
     -
-      entry: ae5d3867-a3c0-4faa-88d3-3a8642356dea
+      entry: 0f2e6315-2a21-4dee-8fbe-0803290e3847
     -
-      entry: c5a0551b-16e4-465c-9cd3-55106b1544b1
+      entry: ed09f77a-2f9f-4b2e-9010-5d14e49d756d
     -
-      entry: d74b68de-66ec-42ad-9607-8c14f6c5fc26
+      entry: 87705f1c-a83e-403e-ab54-fa85a7c963f1
     -
-      entry: 19138bc6-f312-4883-a30e-d9671b2bfe18
+      entry: 11cea7a6-cb84-433c-b977-d429aabe3bc3
     -
-      entry: da876c07-3e76-429d-b1a3-9ccaf5470c60
+      entry: cccbf8da-8b6d-4e1c-9909-a701d43a16ee
+    -
+      entry: bae8b2dc-e522-498f-b876-b002cc99e378
+    -
+      entry: 4c75531a-40fb-4a13-b90f-289a0d027257
+    -
+      entry: 7cc08c5b-a8a0-4cd5-a960-46654fe59bd5
+    -
+      entry: 4ebd86c6-0ddf-4d3b-95fb-7bf466bb7f7a
+    -
+      entry: ff334d47-0e02-4ccd-8209-71a90c9dcfaa
