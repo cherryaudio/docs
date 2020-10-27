@@ -1,0 +1,54 @@
+title: 'Surrealistic MG-1 Plus'
+template: documentation
+layout: layout
+blueprints:
+  - documentation
+  - modules
+mount: 1169629e-0e87-4bde-b7a7-516c06331f42
+revisions: false
+route: '/cherry-audio/instruments/mg-1-plus/{slug}'
+date: true
+sort_dir: asc
+default_status: draft
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  tree:
+    -
+      entry: 9487acd8-9e8a-40af-8445-dab8e9ff3f18
+    -
+      entry: 7e95e6e8-db6c-4286-b5f3-30e1f0951b4e
+    -
+      entry: d5906ea4-b3d8-4602-860f-3eecd3a7e650
+    -
+      entry: 1316104b-5247-4275-b883-fd08a749e241
+    -
+      entry: 624a4944-f64d-48c2-93d6-358b279ce52d
+    -
+      entry: 6fef66cc-ecc4-4db4-8a43-8d28d4790d6c
+    -
+      entry: 92f53a6d-1bfe-4e40-ad4b-c95d142bab47
+    -
+      entry: b2599e15-4506-4437-8ba2-a9ddb7cafd27
+    -
+      entry: d4cad014-87c1-4460-8c1a-100dc9562620
+    -
+      entry: 6474d74b-eaa6-4f13-86bc-86df009023f7
+    -
+      entry: 387e1ddb-0f0c-4326-923b-4768b385462b
+    -
+      entry: 15ce1880-1ddc-400b-b83d-9d9a1c52809c
+    -
+      entry: 85c6bed1-43bd-4c26-979f-ac54d361ba48
+    -
+      entry: 305788ce-a8da-4834-af3c-bbdd78370e59
+    -
+      entry: e807c0ac-ae28-4137-a8b2-05dfd28669a8
+    -
+      entry: cd1db28f-8c6f-4757-b1fe-cd0656db5673
+    -
+      entry: 21284af5-d0bc-4232-890f-480546a5779b
+    -
+      entry: f4ca2a9c-821f-457b-b033-c5c4c8360dfc
