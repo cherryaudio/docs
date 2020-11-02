@@ -1,0 +1,54 @@
+title: Polymode
+template: documentation
+layout: layout
+blueprints:
+  - documentation
+  - modules
+mount: 1169629e-0e87-4bde-b7a7-516c06331f42
+revisions: false
+route: '/cherry-audio/instruments/polymode/{slug}'
+date: true
+sort_dir: asc
+default_status: draft
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  tree:
+    -
+      entry: b020a273-9f80-4ecb-a042-cb6aacd99fe6
+    -
+      entry: 44b428cf-dffc-4213-a6d2-2562ffa4b909
+    -
+      entry: c83d1fb2-a943-4abe-aa24-b550bbc46cec
+    -
+      entry: 74a5b61c-73b3-4020-b84c-8b06879210e5
+    -
+      entry: dc00e8b5-a6f4-48c7-a4f9-ae6d952c3bbd
+    -
+      entry: d0c1c135-ee16-4bf2-af66-2706c6d3529e
+    -
+      entry: e0c2a8f2-c621-4e91-85c9-1dd2e9802ef0
+    -
+      entry: 94f04959-97ad-4976-bc47-b0a21e6f6e6a
+    -
+      entry: 9c26b970-173d-4939-b226-95bdacda2f3e
+    -
+      entry: daefa1d9-ba6f-4421-84e8-d5a65ee19f57
+    -
+      entry: b47fc0bc-37d9-4a7a-b9b4-d945688d4ae8
+    -
+      entry: 8708e9ae-1167-4f54-8d44-8d8e556133e3
+    -
+      entry: 44b1ba5d-3cbf-4c66-910c-bc1ab96b329f
+    -
+      entry: dd02af26-2995-4f94-8fc1-69345e948dd3
+    -
+      entry: 229e30b0-2bad-49f8-998d-328c7365b23c
+    -
+      entry: a21acac6-b939-4c02-bede-5447ca43ec91
+    -
+      entry: b3a02c56-6830-48e5-bfb8-9fdee18bfff7
+    -
+      entry: d6458abc-1afc-433a-b99f-313a3e6b0fe7
