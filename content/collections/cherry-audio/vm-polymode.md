@@ -1603,10 +1603,6 @@ body:
     type: heading
     attrs:
       level: 2
-  -
-    type: heading
-    attrs:
-      level: 2
     content:
       -
         type: text
@@ -1947,7 +1943,7 @@ template: modules
 blueprint: modules
 meta_description: 'The Boolean Logic module is a dual module that combines two incoming gate signals using the common boolean functions AND, NAND, NOR, OR, XOR, and XNOR.'
 social_image: social-modules/boolean-logic.jpg
-updated_at: 1598921710
+updated_at: 1604365137
 updated_by: a0ce54e0-bf71-4d4c-a5b9-7182705c1bfa
 id: a70ab07e-dc88-4661-893f-d374d6bcdd8f
 ---
