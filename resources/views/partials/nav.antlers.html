@@ -1,390 +1,382 @@
-<nav x-data="{ collapsed: true }" class="bg-gray-850 py-2">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-12">
-            <div class="flex-shrink-0">
-                <a href="https://cherryaudio.com/">
-                    {{ partial:icons/cherry }}
-                </a>
-            </div>
-            <div class="hidden md:ml-6 md:block">
-                <div x-data="{ open: false }" @keydown.window.escape="open = false" x-on:click.away="open = false"
-                    class="relative inline-block text-left">
-                    <button x-on:click="open = !open" type="button"
-                        class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-transparent leading-5 font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700 transition ease-in-out duration-150">
-                        Products
-
-                        <svg viewBox="0 0 20 20" fill="currentColor" class="mr-1 ml-2 h-5 w-5">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-
-                    </button>
-                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class="dropdown origin-center absolute z-50 mt-2 w-56 rounded-md shadow-lg md:w-128">
-                        <div class="rounded-md bg-gray-800 shadow-xs flex flex-wrap">
-                            <div
-                                class="mb-4 p-4 sm:mb-0 w-1/2 md:border-r md:border-b md:border-gray-700 xl:border-b-0">
-                                <a href="https://cherryaudio.com/voltage-modular" class="w-2/3 block mx-auto">
-                                    {{ partial:icons/voltage-modular }}
-                                </a>
-
-                                <div class="flex flex-col flex-wrap h-24 mt-4">
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/voltage-modular">About</a>
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/voltage-modular/buy">Pricing</a>
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/voltage-modular/support/module-comparison">Comparison</a>
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/voltage-modular/download">Download</a>
-
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/resources/videos">Videos</a>
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/resources/reviews">Reviews</a>
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://docs.cherryaudio.com/voltage-modular-user-guide">User
-                                            Guide</a>
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/voltage-module-designer">Module Designer</a>
-                                </div>
-                            </div>
-                            <div
-                                class="mb-4 p-4 sm:mb-0 w-1/2 md:border-b xl:border-b-0 xl:border-r md:border-gray-700">
-                                <a href="https://cherryaudio.com/instruments/dco-106" class="w-2/3 block mx-auto h-12 text-white pt-2">
-                                    {{ partial:icons/dco106 }}
-                                </a>
-
-                                <div class="flex flex-col flex-wrap h-20 mt-4">
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/instruments/dco-106">About</a>
-
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/instruments/dco-106/download">Download</a>
-
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://store.cherryaudio.com/bundles/dco-106-polyphonic-synthesizer">Buy</a>
-
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://cherryaudio.com/instruments/dco-106/testimonials">Testimonials</a>
-
-                                    <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                        href="https://docs.cherryaudio.com/cherry-audio/instruments/dco-106">User Guide</a>
-                                </div>
-                            </div>
+<div id="navbar" class="fixed top-0 w-full z-100">
+    <div class="py-2 bg-gray-850" x-data="{ isOpen: false, productsMenuOpen: false, collapsed: true }" @keydown.window.escape="productsMenuOpen = false" x-on:click.away="productsMenuOpen = false">
+        <nav class="py-2 bg-gray-850">
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-12">
+                    <div class="flex-shrink-0">
+                        <a href="https://cherryaudio.com/">
+                            {{ partial:icons/cherry }}
+                        </a>
+                    </div>
+                    <div class="hidden md:ml-6 md:block">
+                        <div class="relative inline-block text-left">
+                            <button type="button" @click="productsMenuOpen = !productsMenuOpen" x-state:on="Item active" x-state:off="Item inactive"
+                                class="inline-flex justify-center w-full px-4 py-2 font-medium leading-5 text-gray-200 transition duration-150 ease-in-out bg-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700">
+                                Products
+                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 ml-2 mr-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
                         </div>
-                    </div>
-                </div>
 
-                <div x-data="{ open: false }" @keydown.window.escape="open = false" x-on:click.away="open = false"
-                    class="relative inline-block text-left ml-2">
-                    <button x-on:click="open = !open" type="button"
-                        class="inline-flex justify-center w-full rounded-md px-4 py-2 bg-transparent leading-5 font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700 transition ease-in-out duration-150">
-                        Store
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" x-on:click.away="open = false"
+                            class="relative inline-block ml-2 text-left">
+                            <button x-on:click="open = !open" type="button"
+                                class="inline-flex justify-center w-full px-4 py-2 font-medium leading-5 text-gray-200 transition duration-150 ease-in-out bg-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700">
+                                Store
 
-                        <svg viewBox="0 0 20 20" fill="currentColor" class="mr-1 ml-2 h-5 w-5">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
+                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 ml-2 mr-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
 
-                    </button>
-                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                        x-transition:enter-start="transform opacity-0 scale-95"
-                        x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-75"
-                        x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class="dropdown origin-center absolute z-50 mt-2 w-56 rounded-md shadow-lg md:w-96">
-                        <div class="rounded-md bg-gray-800 shadow-xs sm:flex  p-4">
-                            <div class="mb-4 sm:mb-0 w-1/2 px-4 md:px-2">
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com/login">Login</a>
+                            </button>
+                            <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-100"
+                                x-transition:enter-start="transform opacity-0 scale-95"
+                                x-transition:enter-end="transform opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75"
+                                x-transition:leave-start="transform opacity-100 scale-100"
+                                x-transition:leave-end="transform opacity-0 scale-95"
+                                class="absolute z-50 w-56 mt-2 origin-center rounded-md shadow-lg dropdown md:w-96">
+                                <div class="p-4 bg-gray-800 rounded-md shadow-xs sm:flex">
+                                    <div class="w-1/2 px-4 mb-4 sm:mb-0 md:px-2">
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com/login">Login</a>
 
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com/register">Register</a>
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com/register">Register</a>
 
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com/redeem">Redeem Code</a>
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com">Discover</a>
-                            </div>
-                            <div class="mb-4 sm:mb-0 w-1/2 px-4 md:px-2">
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com/bundles">Bundles</a>
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com/redeem">Redeem Code</a>
 
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com/modules">Modules</a>
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline" target="_blank"
+                                            href="https://cottonbureau.com/people/cherry-audio-1">Merch</a>
+                                    </div>
+                                    <div class="w-1/2 px-4 mb-4 sm:mb-0 md:px-2">
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com">Discover</a>
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com/bundles">Bundles</a>
 
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com/presets">Presets</a>
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com/modules">Modules</a>
 
-                                <a class="block text-gray-200 hover:text-gray-100 hover:underline"
-                                    href="https://store.cherryaudio.com/instruments">Instruments</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com/presets">Presets</a>
 
-                <a href="https://forums.cherryaudio.com" target="_blank"
-                    class="ml-2 w-full rounded-md px-4 py-2 bg-transparent leading-5 font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700 transition ease-in-out duration-150">
-                    Forums
-                </a>
-
-                <a href="https://cherryaudio.com/resources/press"
-                    class="ml-2 w-full rounded-md px-4 py-2 bg-transparent leading-5 font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700 transition ease-in-out duration-150">
-                    Company
-                </a>
-
-                <a href="https://cherryaudio.kayako.com" target="_blank"
-                    class="ml-2 w-full rounded-md px-4 py-2 bg-transparent leading-5 font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700 transition ease-in-out duration-150">
-                    Support
-                </a>
-            </div>
-            <div class="hidden md:ml-6 md:block">
-                <a href="https://store.cherryaudio.com/login"
-                    class="ml-2 w-full rounded-md px-4 py-2 bg-transparent leading-5 font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700 transition ease-in-out duration-150">
-                    Sign In
-                </a>
-                <a href="https://store.cherryaudio.com/register"
-                    class="ml-2 w-full rounded-md px-4 py-2 bg-transparent leading-5 font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700 transition ease-in-out duration-150">
-                    Register
-                </a>
-            </div>
-
-            <div class="-mr-2 flex md:hidden">
-                <button x-on:click="collapsed = !collapsed"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': !collapsed, 'inline-flex': collapsed }" class="inline-flex"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                        </path>
-                        <path :class="{'hidden': collapsed, 'inline-flex': !collapsed }" class="hidden"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div :class="{'block': !collapsed, 'hidden': collapsed}" class="hidden md:hidden">
-        <div class="px-2 pt-2 pb-3">
-            <div x-data="{ open: false }" @keydown.window.escape="open = false" x-on:click.away="open = false">
-                <button x-on:click="open = !open" type="button"
-                    :class="{'open rounded-b-none border-b border-gray-500': open, 'closed': !open }"
-                    class="text-gray-200 nav-collapse closed">
-                    Products
-                    {{ partial:nav/open-closed }}
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                    x-transition:enter-start="transform opacity-0 scale-95"
-                    x-transition:enter-end="transform opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75"
-                    x-transition:leave-start="transform opacity-100 scale-100" class="px-3 py-2 bg-gray-700 rounded-b">
-                    <a href="https://cherryaudio.com/voltage-modular" class="w-32 block mx-auto mt-2">
-                        <svg viewBox="0 0 180 56.01">
-                            <path fill="#ffe600"
-                                d="M169.98 24.6L178.84 0H12.48L0 36.55h9.65L3.01 56h165.68L180 24.6h-10.02z"></path>
-                            <path fill="#1f1f1f"
-                                d="M57.28 7.07c6.65 0 10.9 4.37 9.94 11.21a12.81 12.81 0 01-13.11 11.2c-6.65 0-10.87-4.36-9.91-11.2A12.79 12.79 0 0157.28 7.07zm-2.53 18.08a7.65 7.65 0 007.59-6.87c.54-4-1.66-6.87-5.67-6.87a7.61 7.61 0 00-7.59 6.87c-.57 3.97 1.66 6.87 5.67 6.87zM72.53 7.62h3.69a.49.49 0 01.49.57L74.38 24.6h8.13a.51.51 0 01.5.58l-.46 3.33a.51.51 0 01-.5.43H69.66a.51.51 0 01-.5-.57L72 8.05a.51.51 0 01.53-.43zM88.84 11.77h-5.5a.5.5 0 01-.5-.57l.46-3.15a.5.5 0 01.5-.43h15.85a.5.5 0 01.5.57l-.46 3.15a.51.51 0 01-.5.43h-5.65l-2.35 16.74a.49.49 0 01-.49.43H87a.51.51 0 01-.5-.57zM137.7 27.16a.49.49 0 01-.29.39 21 21 0 01-9 1.93c-6.65 0-10.87-4.36-9.91-11.2a12.79 12.79 0 0113.08-11.21c3.14 0 5.87.66 7.71 2.35a.51.51 0 010 .75l-3.07 2.9a.49.49 0 01-.7 0 5.8 5.8 0 00-4.52-1.66 7.62 7.62 0 00-7.59 6.87c-.57 4 1.66 6.87 5.67 6.87a10.28 10.28 0 004.33-.94.48.48 0 00.28-.39l.45-3.19h-3.25a.5.5 0 01-.5-.57l.46-3.34a.51.51 0 01.5-.43h7.33a.5.5 0 01.5.57zM110.37 7.62h-3.22a.5.5 0 00-.44.25L95.06 28.19a.5.5 0 00.43.75h20.85a.5.5 0 00.48-.64L110.85 8a.49.49 0 00-.48-.38zM102 24.79l5.19-9.79a.5.5 0 01.93.11l2.51 9.71zM159 7.62h-14.45a.51.51 0 00-.5.43l-2.87 20.32a.5.5 0 00.5.57h14.14a.5.5 0 00.5-.43l.46-3.33a.5.5 0 00-.49-.58h-9.89l.6-4.33h9.32a.5.5 0 00.49-.43l.49-3.34a.5.5 0 00-.5-.57h-9.26l.57-4h10.43a.49.49 0 00.49-.43l.49-3.33a.5.5 0 00-.52-.55zM44.65 7.62H36l-1.9 4.31h6.1L29 25.05l2.81-9.89h-5a.61.61 0 01-.57-.8l2.26-6.74h-5.44a.59.59 0 00-.59.66l3.38 20.14a.59.59 0 00.59.52h7.74a.58.58 0 00.53-.32L45.17 8.47a.58.58 0 00-.52-.85zM76.54 41.39a7.32 7.32 0 01-2.28 4.55 7 7 0 01-4.79 1.55H66.4a.49.49 0 01-.49-.58l1.79-11.13a.51.51 0 01.5-.42h3.22c2 0 3.44.51 4.3 1.53s1.14 2.52.82 4.5zm-2 0a5.74 5.74 0 000-2 2.75 2.75 0 00-.54-1.31 2.55 2.55 0 00-1.18-.76 5.75 5.75 0 00-1.71-.23h-1.67L68 45.76h1.71a5.87 5.87 0 001.79-.25 4 4 0 001.5-.77 4.17 4.17 0 001-1.35 6.64 6.64 0 00.59-2zM90.63 47.59a5.48 5.48 0 01-1.94-.31 3 3 0 01-1.34-.93 3.51 3.51 0 01-.69-1.59 6.64 6.64 0 010-2.26l1.1-6.82a.51.51 0 01.5-.42h.93a.5.5 0 01.49.58l-1.07 6.68a3.41 3.41 0 00.39 2.55 2.2 2.2 0 001.94.85 3 3 0 002.2-.85 4.43 4.43 0 001.15-2.55l1.1-6.84a.51.51 0 01.5-.42h.93a.5.5 0 01.49.58L96.2 42.5a7.69 7.69 0 01-.7 2.26 5.29 5.29 0 01-1.2 1.59 4.56 4.56 0 01-1.65.93 6.25 6.25 0 01-2.02.31zM110.48 35.36h.93a.5.5 0 01.49.58l-1.58 9.82h5a.5.5 0 01.49.58l-.12.73a.5.5 0 01-.49.42h-6.48a.5.5 0 01-.49-.58L110 35.78a.51.51 0 01.48-.42zM156.77 37.62a2.74 2.74 0 00-.62-1.18 3 3 0 00-1.18-.79 4.82 4.82 0 00-1.73-.29h-4a.51.51 0 00-.5.42l-1.79 11.13a.5.5 0 00.49.58h.94a.5.5 0 00.49-.42l.68-4.22.28-1.73.58-3.61a.5.5 0 01.49-.42h2.1a2 2 0 011.59.54 1.68 1.68 0 01.32 1.44 2.32 2.32 0 01-.84 1.49 2.74 2.74 0 01-1.77.56h-1.33l.8 2 1.73 4.11a.51.51 0 00.46.3h1a.5.5 0 00.47-.69l-1.78-4.24a4.76 4.76 0 002.82-2.23l.06-.11a4.18 4.18 0 00.24-2.64zM52.05 37.09a3.32 3.32 0 012.62 1 3.88 3.88 0 01.71 3.1 5 5 0 01-5 4.55 3.36 3.36 0 01-2.64-1 3.83 3.83 0 01-.69-3.1 5 5 0 015-4.54m.06-1.93a6.94 6.94 0 00-6.92 6.27c-.52 3.62 1.51 6.26 5.16 6.26a7 7 0 006.93-6.26c.49-3.63-1.51-6.27-5.17-6.27zM34.8 35.6l-4.67 7.81-2.21-7.69a.52.52 0 00-.49-.36H26a.51.51 0 00-.5.42l-1.81 11.13a.49.49 0 00.49.58h.92a.5.5 0 00.49-.42L26.92 39l1.8 6.26a.5.5 0 00.48.36h1.27a.5.5 0 00.43-.24l3.91-6.53-1.29 8.09a.49.49 0 00.49.58h.92a.51.51 0 00.5-.42l1.77-11.16a.5.5 0 00-.5-.58h-1.47a.5.5 0 00-.43.24zM133.73 35.76a.51.51 0 00-.49-.4H132a.48.48 0 00-.44.27l-5.86 11.13a.49.49 0 00.44.73h.86a.48.48 0 00.44-.27l.64-1.22h5.8l.22 1.09a.5.5 0 00.49.4h1a.5.5 0 00.49-.6zm-4.79 8.57l3-5.66a.25.25 0 01.47.07l1.15 5.59z">
-                            </path>
-                        </svg>
-                    </a>
-
-                    <div class="flex flex-col flex-wrap h-24 mt-2">
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/voltage-modular">About</a>
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/voltage-modular/buy">Pricing</a>
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/voltage-modular/support/module-comparison">Comparison</a>
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/voltage-modular/download">Download</a>
-
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/resources/videos">Videos</a>
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/resources/reviews">Reviews</a>
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://docs.cherryaudio.com/voltage-modular-user-guide">User
-                            Guide</a>
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/voltage-module-designer">Module Designer</a>
-                    </div>
-                    <div class="border-t border-gray-800 -mx-4 my-2"></div>
-
-                    <a href="https://cherryaudio.com/instruments/dco-106" class="w-32 block mx-auto">
-                        {{ partial:icons/dco106 }}
-                    </a>
-
-                    <div class="flex flex-col flex-wrap h-20 mt-2">
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/instruments/dco-106">About</a>
-
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/instruments/dco-106/download">Download</a>
-
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://store.cherryaudio.com/bundles/dco-106-polyphonic-synthesizer">Buy</a>
-
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://cherryaudio.com/instruments/dco-106/testimonials" target="_blank">Testimonials</a>
-
-                        <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                            href="https://docs.cherryaudio.com/cherry-audio/instruments/dco-106">User Guide</a>
-                    </div>
-                </div>
-            </div>
-
-            <div x-data="{ open: false }" @keydown.window.escape="open = false" x-on:click.away="open = false">
-                <button x-on:click="open = !open" type="button"
-                    :class="{'open rounded-b-none border-b border-gray-500': open, 'closed': !open }"
-                    class="text-gray-200 nav-collapse closed">
-                    Store
-                    {{ partial:nav/open-closed }}
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                    x-transition:enter-start="transform opacity-0 scale-95"
-                    x-transition:enter-end="transform opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75"
-                    x-transition:leave-start="transform opacity-100 scale-100" class="px-3 py-2 bg-gray-700 rounded-b">
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/login">Login</a>
-
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/register">Register</a>
-
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/redeem">Redeem Code</a>
-
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/bundles">Bundles</a>
-
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/modules">Modules</a>
-
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/presets">Presets</a>
-
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/software">Software</a>
-
-                    <a class="block text-gray-200 py-1 hover:text-gray-100 hover:underline"
-                        href="https://store.cherryaudio.com/instruments">Instruments</a>
-                </div>
-            </div>
-
-            <a href="https://forums.cherryaudio.com"
-                class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Forums</a>
-            <a href="https://cherryaudio.com/resources/press"
-                class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Company</a>
-            <a href="https://cherryaudio.kayako.com/"
-                class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Support</a>
-            <a href="https://store.cherryaudio.com/login"
-                class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Login</a>
-            <a href="https://store.cherryaudio.com/register"
-                class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Register</a>
-        </div>
-    </div>
-</nav>
-
-<nav class="hidden md:block bg-gray-600 w-full fixed sticky">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="border-b border-gray-700">
-            <div class="flex items-center justify-between h-16 px-4 sm:px-0">
-                <div class="flex items-center">
-                    <div class="hidden md:block">
-                        <div class="flex items-baseline">
-                            {{ nav:main_nav }}
-                            {{ if children }}
-                            <div class="ml-4 relative" x-data="{open:false}">
-                                <div>
-                                    <button
-                                        class="max-w-xs flex items-center text-sm text-gray-200 rounded-md focus:outline-none px-3 py-2 hover:bg-gray-700 {{ if is_current || is_parent }} bg-gray-900 {{ /if }}"
-                                        @click="open = !open" @keydown.window.escape="open = false"
-                                        x-on:click.away="open = false" id="{{ title }}-menu"
-                                        aria-label="{{ title }} menu" :aria-open="open" aria-haspopup="true">
-                                        {{ title }}
-                                        <svg viewBox="0 0 20 20" fill="currentColor" class="ml-2 h-5 w-5">
-                                            <path fill-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clip-rule="evenodd"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div x-show="open" x-transition:enter="transition ease-out duration-100 z-50"
-                                    x-transition:enter-start="transform opacity-0 scale-95"
-                                    x-transition:enter-end="transform opacity-100 scale-100"
-                                    x-transition:leave="transition ease-in duration-75 transform"
-                                    x-transition:leave-start="transform opacity-100 scale-100"
-                                    x-transition:leave-end="transform opacity-0 scale-95"
-                                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
-                                    <div class="py-1 rounded-md bg-white shadow-xs" role="menu"
-                                        aria-orientation="vertical" aria-labelledby="{{ title }}-menu">
-                                        {{ children }}
-                                        <a href="{{ url }}"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 transition ease-in-out duration-150"
-                                            role="menuitem">{{ title }}</a>
-                                        {{ /children }}
+                                        <a class="block text-gray-200 hover:text-gray-100 hover:underline"
+                                            href="https://store.cherryaudio.com/instruments">Instruments</a>
                                     </div>
                                 </div>
                             </div>
-                            {{ else }}
-                            {{ if is_current }}
-                            <a href="{{ url }}"
-                                class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 hover:bg-black focus:outline-none focus:text-white focus:bg-gray-700 {{ if !first }}ml-4{{ /if }}">
-                                {{ title }}
-                            </a>
-                            {{ else }}
-                            <a href="{{ url }}"
-                                class="px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-850 {{ if !first }}ml-4{{ /if }}">
-                                {{ title }}
-                            </a>
-                            {{ /if }}
-                            {{ /if }}
-                            {{ /nav:main_nav }}
+                        </div>
+
+                        <a href="https://forums.cherryaudio.com" target="_blank"
+                            class="w-full px-4 py-2 ml-2 font-medium leading-5 text-gray-200 transition duration-150 ease-in-out bg-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700">
+                            Forums
+                        </a>
+
+                        <a href="https://cherryaudio.com/resources/press"
+                            class="w-full px-4 py-2 ml-2 font-medium leading-5 text-gray-200 transition duration-150 ease-in-out bg-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700">
+                            Company
+                        </a>
+
+                        <a href="https://cherryaudio.kayako.com" target="_blank"
+                            class="w-full px-4 py-2 ml-2 font-medium leading-5 text-gray-200 transition duration-150 ease-in-out bg-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700">
+                            Support
+                        </a>
+                    </div>
+                    <div class="hidden md:ml-6 md:block">
+                        <a href="https://store.cherryaudio.com/login"
+                            class="w-full px-4 py-2 ml-2 font-medium leading-5 text-gray-200 transition duration-150 ease-in-out bg-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700">
+                            Sign In
+                        </a>
+                        <a href="https://store.cherryaudio.com/register"
+                            class="w-full px-4 py-2 ml-2 font-medium leading-5 text-gray-200 transition duration-150 ease-in-out bg-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline-blue focus:bg-gray-700 active:bg-gray-700">
+                            Register
+                        </a>
+                    </div>
+
+                    <div class="flex -mr-2 md:hidden">
+                        <button x-on:click="collapsed = !collapsed"
+                            class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                            <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path :class="{'hidden': !collapsed, 'inline-flex': collapsed }" class="inline-flex"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                                </path>
+                                <path :class="{'hidden': collapsed, 'inline-flex': !collapsed }" class="hidden"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div :class="{'block': !collapsed, 'hidden': collapsed}" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3">
+                    <div x-data="{ open: false }">
+                        <button x-on:click="open = !open" type="button"
+                            :class="{'open rounded-b-none border-b border-gray-500': open, 'closed': !open }"
+                            class="text-gray-200 nav-collapse closed">
+                            Products
+                            {{ partial:nav/open-closed }}
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100" class="px-3 py-2 bg-gray-700 rounded-b">
+                            <a href="https://cherryaudio.com/voltage-modular"><img src="https://cherryaudio.com/assets/voltage-modular/voltage-outline-correct-color.png" alt="Voltage Modular" class="w-2/3 p-4 mx-auto mb-2"></a>
+                            <a href="https://cherryaudio.com/voltage-module-designer"><img src="https://cherryaudio.com/assets/module-designer/module-designer-correct-colors.png" alt="Voltage Module Designer" class="w-2/3 p-4 mx-auto mb-2"></a>
+                            <a href="https://cherryaudio.com/instruments/dco-106"><img src="https://cherryaudio.com/assets/dco-106/dco-106-logo-white.png" alt="DCO-106" class="w-2/3 p-4 mx-auto mb-2"></a>
+                            <a href="https://cherryaudio.com/instruments/ca2600"><img src="https://cherryaudio.com/assets/ca2600/ca2600_logo.png" alt="CA2600" class="w-2/3 p-4 mx-auto mb-2"></a>
+                            <a href="https://cherryaudio.com/instruments/surrealistic-mg-1-plus"><img src="https://cherryaudio.com/assets/instruments/mg-1-plus/mg-1-plus-white-stacked.png" alt="Surrealistic MG-1 Plus" class="w-2/3 p-4 mx-auto mb-2"></a>
                         </div>
                     </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-4 flex items-center md:ml-6">
-                        <form action="/search" method="get" class="mr-4">
-                            <label for="email" class="sr-only">Search</label>
-                            <div class="relative rounded-full">
-                                <div
-                                    class="absolute inset-y-0 left-0 pl-3 text-gray-400 flex items-center pointer-events-none">
-                                    <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4ZM2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8C14 9.29583 13.5892 10.4957 12.8907 11.4765L17.7071 16.2929C18.0976 16.6834 18.0976 17.3166 17.7071 17.7071C17.3166 18.0976 16.6834 18.0976 16.2929 17.7071L11.4765 12.8907C10.4957 13.5892 9.29583 14 8 14C4.68629 14 2 11.3137 2 8Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <input id="search" name="q" value=""
-                                    class="form-input bg-gray-700 border-gray-800 text-gray-200 block w-full pl-10 hover:bg-gray-600 focus:bg-gray-600 sm:text-sm sm:leading-5 transition duration-150 ease-in-out">
-                            </div>
-                        </form>
+
+                    <div x-data="{ open: false }" @keydown.window.escape="open = false" x-on:click.away="open = false">
+                        <button x-on:click="open = !open" type="button"
+                            :class="{'open rounded-b-none border-b border-gray-500': open, 'closed': !open }"
+                            class="text-gray-200 nav-collapse closed">
+                            Store
+                            {{ partial:nav/open-closed }}
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100" class="px-3 py-2 bg-gray-700 rounded-b">
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/login">Login</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/register">Register</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/redeem">Redeem Code</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline" target="_blank"
+                                href="https://cottonbureau.com/people/cherry-audio-1">Merch</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/bundles">Bundles</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/modules">Modules</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/presets">Presets</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/software">Software</a>
+
+                            <a class="block py-1 text-gray-200 hover:text-gray-100 hover:underline"
+                                href="https://store.cherryaudio.com/instruments">Instruments</a>
+                        </div>
                     </div>
+
+                    <a href="https://forums.cherryaudio.com"
+                        class="block px-3 py-2 mt-1 text-base font-medium text-gray-200 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Forums</a>
+                    <a href="https://cherryaudio.com/resources/press"
+                        class="block px-3 py-2 mt-1 text-base font-medium text-gray-200 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Company</a>
+                    <a href="https://cherryaudio.kayako.com/"
+                        class="block px-3 py-2 mt-1 text-base font-medium text-gray-200 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Support</a>
+                    <a href="https://store.cherryaudio.com/login"
+                        class="block px-3 py-2 mt-1 text-base font-medium text-gray-200 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Login</a>
+                    <a href="https://store.cherryaudio.com/register"
+                        class="block px-3 py-2 mt-1 text-base font-medium text-gray-200 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Register</a>
                 </div>
-                <div class="-mr-2 flex md:hidden">
-                    <button x-on:click="open = !open"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                            <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
+            </div>
+        </nav>
+        <div x-cloak x-description="'Products' flyout menu, show/hide based on flyout menu state."
+            x-show="productsMenuOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-1"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-1"
+            class="absolute inset-x-0 hidden transform shadow-lg z-100 md:block"
+        >
+            <div x-cloak class="bg-gray-700">
+                <div class="grid px-4 py-6 mx-auto max-w-7xl gap-y-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-5 lg:px-8 lg:py-12 xl:py-6">
+                    <a href="https://cherryaudio.com/voltage-modular" class="flex flex-col justify-between p-3 -m-3 space-y-6 transition duration-150 ease-in-out rounded-lg hover:bg-gray-800">
+    <div class="flex space-x-4 md:h-full lg:flex-col lg:space-x-0 lg:space-y-4">
+        <div class="flex-shrink-0">
+            <img src="https://cherryaudio.com/assets/products/voltage-modular.jpg" alt="Voltage Modular" class="rounded-lg">
+        </div>
+        <div class="space-y-2 md:flex-1 md:flex md:flex-col md:justify-between lg:space-y-4">
+            <div class="flex items-center h-16">
+                <img src="https://cherryaudio.com/assets/voltage-modular/voltage-outline-correct-color.png" alt="Voltage Modular" class="w-2/3 mx-auto">
             </div>
         </div>
     </div>
-</nav>
+</a>
+                    <a href="https://cherryaudio.com/voltage-module-designer" class="flex flex-col justify-between p-3 -m-3 space-y-6 transition duration-150 ease-in-out rounded-lg hover:bg-gray-800">
+    <div class="flex space-x-4 md:h-full lg:flex-col lg:space-x-0 lg:space-y-4">
+        <div class="flex-shrink-0">
+            <img src="https://cherryaudio.com/assets/products/voltage-module-designer.jpg" alt="Voltage Module Designer" class="rounded-lg">
+        </div>
+        <div class="space-y-2 md:flex-1 md:flex md:flex-col md:justify-between lg:space-y-4">
+            <div class="flex items-center h-16">
+                <img src="https://cherryaudio.com/assets/module-designer/module-designer-correct-colors.png" alt="Voltage Module Designer" class="w-2/3 mx-auto">
+            </div>
+        </div>
+    </div>
+</a>
+                    <a href="https://cherryaudio.com/instruments/dco-106" class="flex flex-col justify-between p-3 -m-3 space-y-6 transition duration-150 ease-in-out rounded-lg hover:bg-gray-800">
+                        <div class="flex space-x-4 md:h-full lg:flex-col lg:space-x-0 lg:space-y-4">
+                            <div class="flex-shrink-0">
+                                <img src="https://cherryaudio.com/assets/products/dco-106.jpg" alt="DCO-106" class="rounded-lg">
+                            </div>
+                            <div class="space-y-2 md:flex-1 md:flex md:flex-col md:justify-between lg:space-y-4">
+                                <div class="flex items-center h-16">
+                                    <img src="https://cherryaudio.com/assets/dco-106/dco-106-logo-white.png" alt="DCO-106" class="w-2/3 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://cherryaudio.com/instruments/ca2600" class="flex flex-col justify-between p-3 -m-3 space-y-6 transition duration-150 ease-in-out rounded-lg hover:bg-gray-800">
+                        <div class="flex space-x-4 md:h-full lg:flex-col lg:space-x-0 lg:space-y-4">
+                            <div class="flex-shrink-0">
+                                <img src="https://cherryaudio.com/assets/products/ca2600.jpg" alt="CA2600" class="rounded-lg">
+                            </div>
+                            <div class="space-y-2 md:flex-1 md:flex md:flex-col md:justify-between lg:space-y-4">
+                                <div class="flex items-center h-16">
+                                    <img src="https://cherryaudio.com/assets/ca2600/ca2600_logo.png" alt="CA2600" class="w-2/3 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://cherryaudio.com/instruments/surrealistic-mg-1-plus" class="flex flex-col justify-between p-3 -m-3 space-y-6 transition duration-150 ease-in-out rounded-lg hover:bg-gray-800">
+    <div class="flex space-x-4 md:h-full lg:flex-col lg:space-x-0 lg:space-y-4">
+        <div class="flex-shrink-0">
+            <img src="https://cherryaudio.com/assets/products/mg1-product-image.png" alt="Surrealistic MG-1 Plus" class="rounded-lg">
+        </div>
+        <div class="space-y-2 md:flex-1 md:flex md:flex-col md:justify-between lg:space-y-4">
+            <div class="flex items-center h-16">
+                <img src="https://cherryaudio.com/assets/instruments/mg-1-plus/mg-1-plus-white-stacked.png" alt="Surrealistic MG-1 Plus" class="w-2/3 mx-auto">
+            </div>
+        </div>
+    </div>
+</a>
+
+</div>
+            </div>
+            <div x-cloak class="bg-gray-800">
+              <div class="px-4 py-5 mx-auto space-y-6 max-w-7xl sm:flex sm:justify-end sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+                  <a href="https://cherryaudio.com/products" class="flex items-center p-3 -m-3 space-x-3 text-base font-medium leading-6 text-gray-200 transition duration-150 ease-in-out rounded-md hover:bg-gray-700">
+                    <span>View All Products</span>
+                    <svg class="flex-shrink-0 w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <nav class="fixed sticky hidden w-full bg-gray-600 md:block">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="border-b border-gray-700">
+                <div class="flex items-center justify-between h-16 px-4 sm:px-0">
+                    <div class="flex items-center">
+                        <div class="hidden md:block">
+                            <div class="flex items-baseline">
+                                {{ nav:main_nav }}
+                                {{ if children }}
+                                <div class="relative ml-4" x-data="{open:false}">
+                                    <div>
+                                        <button
+                                            class="max-w-xs flex items-center text-sm text-gray-200 rounded-md focus:outline-none px-3 py-2 hover:bg-gray-700 {{ if is_current || is_parent }} bg-gray-900 {{ /if }}"
+                                            @click="open = !open" @keydown.window.escape="open = false"
+                                            x-on:click.away="open = false" id="{{ title }}-menu"
+                                            aria-label="{{ title }} menu" :aria-open="open" aria-haspopup="true">
+                                            {{ title }}
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 ml-2">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-100 z-50"
+                                        x-transition:enter-start="transform opacity-0 scale-95"
+                                        x-transition:enter-end="transform opacity-100 scale-100"
+                                        x-transition:leave="transition ease-in duration-75 transform"
+                                        x-transition:leave-start="transform opacity-100 scale-100"
+                                        x-transition:leave-end="transform opacity-0 scale-95"
+                                        class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
+                                        <div class="py-1 bg-white rounded-md shadow-xs" role="menu"
+                                            aria-orientation="vertical" aria-labelledby="{{ title }}-menu">
+                                            {{ children }}
+                                            <a href="{{ url }}"
+                                                class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-200"
+                                                role="menuitem">{{ title }}</a>
+                                            {{ /children }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ else }}
+                                {{ if is_current }}
+                                <a href="{{ url }}"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 hover:bg-black focus:outline-none focus:text-white focus:bg-gray-700 {{ if !first }}ml-4{{ /if }}">
+                                    {{ title }}
+                                </a>
+                                {{ else }}
+                                <a href="{{ url }}"
+                                    class="px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-850 {{ if !first }}ml-4{{ /if }}">
+                                    {{ title }}
+                                </a>
+                                {{ /if }}
+                                {{ /if }}
+                                {{ /nav:main_nav }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="flex items-center ml-4 md:ml-6">
+                            <form action="/search" method="get" class="mr-4">
+                                <label for="email" class="sr-only">Search</label>
+                                <div class="relative rounded-full">
+                                    <div
+                                        class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4ZM2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8C14 9.29583 13.5892 10.4957 12.8907 11.4765L17.7071 16.2929C18.0976 16.6834 18.0976 17.3166 17.7071 17.7071C17.3166 18.0976 16.6834 18.0976 16.2929 17.7071L11.4765 12.8907C10.4957 13.5892 9.29583 14 8 14C4.68629 14 2 11.3137 2 8Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <input id="search" name="q" value=""
+                                        class="block w-full pl-10 text-gray-200 transition duration-150 ease-in-out bg-gray-700 border-gray-800 form-input hover:bg-gray-600 focus:bg-gray-600 sm:text-sm sm:leading-5">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="flex -mr-2 md:hidden">
+                        <button x-on:click="open = !open"
+                            class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+                            <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                                <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+<div x-data="{navHeight: 0 }" x-init="navHeight = document.getElementById('navbar').offsetHeight">
+    <div :style="'height: ' + navHeight + 'px'"></div>
+</div>
