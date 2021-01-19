@@ -1,0 +1,40 @@
+title: 'Eight Voice'
+template: documentation
+layout: layout
+blueprints:
+  - documentation
+  - modules
+mount: 1169629e-0e87-4bde-b7a7-516c06331f42
+revisions: false
+route: '/cherry-audio/instruments/eight-voice/{slug}'
+date: true
+sort_dir: asc
+default_status: draft
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  tree:
+    -
+      entry: 9dd6ceb3-ee6f-4188-bcf4-b3539b5c5a21
+    -
+      entry: 954a873e-4f89-4744-8f09-469ce37581e4
+    -
+      entry: 7f1694e2-1103-4788-8d37-d85079a139f1
+    -
+      entry: c9d944b6-4f5d-44e0-ba5e-65b6f16df26a
+    -
+      entry: a939bb89-afce-44ab-a889-b8b5262185c3
+    -
+      entry: 0aa514d1-d0de-4951-acf3-1143d360f2bf
+    -
+      entry: 568d9701-0465-471a-9881-235e0b2080ed
+    -
+      entry: 816514d6-4837-42e0-8fa6-b172f46d1e7a
+    -
+      entry: 1bbf9407-9167-4836-b49a-594d4c64c2c7
+    -
+      entry: 2d8809a6-5e93-4fe6-a98d-66cfb9f0d371
+    -
+      entry: b4354a6d-96ad-4605-952e-edc02776dd36
